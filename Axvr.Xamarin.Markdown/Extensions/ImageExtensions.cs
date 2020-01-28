@@ -1,4 +1,4 @@
-﻿namespace Xam.Forms.Markdown.Extensions
+﻿namespace Axvr.Xamarin.Markdown.Extensions
 {
     using System;
     using System.IO;

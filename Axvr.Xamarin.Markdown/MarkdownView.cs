@@ -1,4 +1,4 @@
-﻿namespace Xam.Forms.Markdown
+﻿namespace Axvr.Xamarin.Markdown
 {
     using System.Linq;
     using Markdig.Syntax;

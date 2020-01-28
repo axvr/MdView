@@ -1,4 +1,4 @@
-﻿namespace Xam.Forms.Markdown
+﻿namespace Axvr.Xamarin.Markdown
 {
     using Xamarin.Forms;
 
