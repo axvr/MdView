@@ -1,7 +1,7 @@
-﻿namespace Axvr.Xamarin.Markdown.Extensions
-{
-    using System.Text.RegularExpressions;
+﻿using System.Text.RegularExpressions;
 
+namespace Axvr.Xamarin.Markdown.Extensions
+{
     /// <summary>
     /// A set o helper extensions for parsing Github common urls.
     /// </summary>

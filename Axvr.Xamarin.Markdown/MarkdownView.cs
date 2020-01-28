@@ -1,15 +1,15 @@
-﻿namespace Axvr.Xamarin.Markdown
-{
-    using System.Linq;
-    using Markdig.Syntax;
-    using Markdig.Syntax.Inlines;
-    using Xamarin.Forms;
-    using System;
-    using System.Collections.Generic;
-    using System.Diagnostics;
-    using System.IO;
-    using Extensions;
+﻿using System.Linq;
+using Markdig.Syntax;
+using Markdig.Syntax.Inlines;
+using Xamarin.Forms;
+using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.IO;
+using Axvr.Xamarin.Markdown.Extensions;
 
+namespace Axvr.Xamarin.Markdown
+{
     public class MarkdownView : ContentView
     {
         public Action<string> NavigateToLink { get; set; } = (s) => Device.OpenUri(new Uri(s));

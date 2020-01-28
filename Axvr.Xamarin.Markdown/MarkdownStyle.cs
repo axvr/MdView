@@ -1,7 +1,7 @@
-﻿namespace Axvr.Xamarin.Markdown
-{
-    using Xamarin.Forms;
+﻿using Xamarin.Forms;
 
+namespace Axvr.Xamarin.Markdown
+{
     public class MarkdownStyle
     {
         public FontAttributes Attributes { get; set; } = FontAttributes.None;

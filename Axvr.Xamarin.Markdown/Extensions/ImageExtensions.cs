@@ -1,12 +1,12 @@
-﻿namespace Axvr.Xamarin.Markdown.Extensions
-{
-    using System;
-    using System.IO;
-    using System.Net;
-    using SkiaSharp;
-    using Xamarin.Forms;
-    using System.Diagnostics;
+﻿using System;
+using System.IO;
+using System.Net;
+using SkiaSharp;
+using Xamarin.Forms;
+using System.Diagnostics;
 
+namespace Axvr.Xamarin.Markdown.Extensions
+{
     public static class ImageExtensions
     {
         public static void RenderSvg(this Image view, string uri)

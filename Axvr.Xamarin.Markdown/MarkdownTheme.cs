@@ -1,7 +1,7 @@
-﻿namespace Axvr.Xamarin.Markdown
-{
-    using Xamarin.Forms;
+﻿using Xamarin.Forms;
 
+namespace Axvr.Xamarin.Markdown
+{
     public class MarkdownTheme
     {
         public MarkdownTheme()
