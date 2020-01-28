@@ -1,1 +1,5 @@
+# See: https://axvr.io/projects/ascribe
 * text=auto
+*.cs final-newline expand-tab tab-stop=4 trim-trailing-whitespace eol=lf
+*.csproj expand-tab tab-stop=2 trim-trailing-whitespace
+*.md expand-tab tab-stop=2 trim-trailing-whitespace final-newline
