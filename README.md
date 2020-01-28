@@ -1,8 +1,8 @@
-# MarkdownView *for Xamarin.Forms* 
+# MdView *for Xamarin.Forms*
 
-[![NuGet](https://img.shields.io/nuget/v/Xam.Forms.MarkdownView.svg?label=NuGet)](https://www.nuget.org/packages/Xam.Forms.MarkdownView/) [![Donate](https://img.shields.io/badge/donate-paypal-yellow.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=ZJZKXPPGBKKAY&lc=US&item_name=GitHub&item_number=0000001&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donate_SM%2egif%3aNonHosted)
+The flexible Markdown control for Xamarin.Forms.
 
-A native Xamarin.Forms Markdown renderer.
+This project is a fork of [MarkdownView](https://github.com/dotnet-ad/MarkdownView).
 
 ## Gallery
 
@@ -38,31 +38,31 @@ Unfortunately, Xamarin.Forms string rendering has some limitations ...
 ## Roadmap
 
 * **Customization**
-	* [X] Styles 
-	* [X] Themes 
+  * [X] Styles
+  * [X] Themes
 * **Leaf blocks**
-	* [X] Headings
-	* [X] Paragraphs
-	* [ ] HTML Blocks (maybe partial and specific support)
-	* [ ] Link reference definitions
-	* [X] Code blocks
-	* [X] Thematic breaks
+  * [X] Headings
+  * [X] Paragraphs
+  * [ ] HTML Blocks (maybe partial and specific support)
+  * [ ] Link reference definitions
+  * [X] Code blocks
+  * [X] Thematic breaks
 * **Container blocks**
-	* [X] Block quote
-	* [X] Lists
-		* [ ] Numbers bullet formats
-		* [ ] Custom bullets
+  * [X] Block quote
+  * [X] Lists
+    * [ ] Numbers bullet formats
+    * [ ] Custom bullets
 * **Inlines**
-	* [X] Textual content
-	* [X] Emphasis and string emphasis
-	* [X] Code spans
-	* [X] Links (partial, no interaction)
-	* [X] Image blocks (partial, not inlined)
-		* [X] SVG Rendering (Skia)
+  * [X] Textual content
+  * [X] Emphasis and string emphasis
+  * [X] Code spans
+  * [X] Links (partial, no interaction)
+  * [X] Image blocks (partial, not inlined)
+    * [X] SVG Rendering (Skia)
 * **Extensions**
-	* [ ] Table blocks
-	* [ ] Emojis (ascii)
-	* [ ] Task lists 
+  * [ ] Table blocks
+  * [ ] Emojis (ascii)
+  * [ ] Task lists
 
 ## Thanks
 
@@ -77,4 +77,5 @@ If you want to contribute code please file an issue and create a branch off of t
 
 ## License
 
-MIT © [Aloïs Deniel](http://aloisdeniel.github.io)
+Copyright © 2020 [Alex Vear](https://axvr.io) <av@axvr.io>
+Copyright © 2017 [Aloïs Deniel](http://aloisdeniel.github.io)
