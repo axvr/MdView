@@ -7,12 +7,13 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using Axvr.Xamarin.Markdown.Extensions;
+using Xamarin.Essentials;
 
 namespace Axvr.Xamarin.Markdown
 {
-    public class MarkdownView : ContentView
+    public class MdView : ContentView
     {
-        public Action<string> NavigateToLink { get; set; } = (s) => Device.OpenUri(new Uri(s));
+        public Action<string> NavigateToLink { get; set; } = (s) => Launcher.TryOpenAsync(new Uri(s));
 
         public static MarkdownTheme Global = new LightMarkdownTheme();
 
@@ -22,7 +23,7 @@ namespace Axvr.Xamarin.Markdown
             set { SetValue(MarkdownProperty, value); }
         }
 
-        public static readonly BindableProperty MarkdownProperty = BindableProperty.Create(nameof(Markdown), typeof(string), typeof(MarkdownView), null, propertyChanged: OnMarkdownChanged);
+        public static readonly BindableProperty MarkdownProperty = BindableProperty.Create(nameof(Markdown), typeof(string), typeof(MdView), null, propertyChanged: OnMarkdownChanged);
 
         public string RelativeUrlHost
         {
@@ -30,7 +31,7 @@ namespace Axvr.Xamarin.Markdown
             set { SetValue(RelativeUrlHostProperty, value); }
         }
 
-        public static readonly BindableProperty RelativeUrlHostProperty = BindableProperty.Create(nameof(RelativeUrlHost), typeof(string), typeof(MarkdownView), null, propertyChanged: OnMarkdownChanged);
+        public static readonly BindableProperty RelativeUrlHostProperty = BindableProperty.Create(nameof(RelativeUrlHost), typeof(string), typeof(MdView), null, propertyChanged: OnMarkdownChanged);
 
         public MarkdownTheme Theme
         {
@@ -38,7 +39,7 @@ namespace Axvr.Xamarin.Markdown
             set { SetValue(ThemeProperty, value); }
         }
 
-        public static readonly BindableProperty ThemeProperty = BindableProperty.Create(nameof(Theme), typeof(MarkdownTheme), typeof(MarkdownView), Global, propertyChanged: OnMarkdownChanged);
+        public static readonly BindableProperty ThemeProperty = BindableProperty.Create(nameof(Theme), typeof(MarkdownTheme), typeof(MdView), Global, propertyChanged: OnMarkdownChanged);
 
         private bool isQuoted;
 
@@ -46,7 +47,7 @@ namespace Axvr.Xamarin.Markdown
 
         static void OnMarkdownChanged(BindableObject bindable, object oldValue, object newValue)
         {
-            var view = bindable as MarkdownView;
+            var view = bindable as MdView;
             view.RenderMarkdown();
         }
 
@@ -416,7 +417,7 @@ namespace Axvr.Xamarin.Markdown
                     };
 
                 case EmphasisInline emphasis:
-                    var childAttributes = attributes | (emphasis.IsDouble ? FontAttributes.Bold : FontAttributes.Italic);
+                    var childAttributes = attributes | (emphasis.DelimiterCount == 2 ? FontAttributes.Bold : FontAttributes.Italic);
                     return emphasis.SelectMany(x => CreateSpans(x, family, childAttributes, foregroundColor, backgroundColor, size)).ToArray();
 
                 case LineBreakInline breakline:
