@@ -13,7 +13,7 @@ namespace Axvr.Xamarin.Markdown
 {
     public class MdView : ContentView
     {
-        public Action<string> NavigateToLink { get; set; } = (s) => Launcher.TryOpenAsync(new Uri(s));
+        public Action<string> NavigateToLink { get; set; } = (s) => Launcher.TryOpenAsync(s);
 
         public static MarkdownTheme Global = new LightMarkdownTheme();
 
@@ -427,16 +427,16 @@ namespace Axvr.Xamarin.Markdown
 
                     var url = link.Url;
 
-                    if (!(url.StartsWith("http://") || url.StartsWith("https://")))
+                    if (!url.Contains(':'))
                     {
                         url = $"{this.RelativeUrlHost?.TrimEnd('/')}/{url.TrimStart('/')}";
                     }
 
-                    if(link.IsImage)
+                    if (link.IsImage)
                     {
                         var image = new Image();
 
-                        if(Path.GetExtension(url) == ".svg")
+                        if (Path.GetExtension(url) == ".svg")
                         {
                             image.RenderSvg(url);
                         }
