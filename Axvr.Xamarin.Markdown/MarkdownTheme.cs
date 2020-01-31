@@ -6,63 +6,63 @@ namespace Axvr.Xamarin.Markdown
     {
         public MarkdownTheme()
         {
-            this.Paragraph = new MarkdownStyle
+            Paragraph = new MarkdownStyle
             {
                 Attributes = FontAttributes.None,
                 FontSize = 12,
             };
 
-            this.Heading1 = new MarkdownStyle
+            Heading1 = new MarkdownStyle
             {
                 Attributes = FontAttributes.Bold,
                 BorderSize = 1,
                 FontSize = 26,
             };
 
-            this.Heading2 = new MarkdownStyle
+            Heading2 = new MarkdownStyle
             {
                 Attributes = FontAttributes.Bold,
                 BorderSize = 1,
                 FontSize = 22,
             };
 
-            this.Heading3 = new MarkdownStyle
+            Heading3 = new MarkdownStyle
             {
                 Attributes = FontAttributes.Bold,
                 FontSize = 20,
             };
 
-            this.Heading4 = new MarkdownStyle
+            Heading4 = new MarkdownStyle
             {
                 Attributes = FontAttributes.Bold,
                 FontSize = 18,
             };
 
-            this.Heading5 = new MarkdownStyle
+            Heading5 = new MarkdownStyle
             {
                 Attributes = FontAttributes.Bold,
                 FontSize = 16,
             };
 
-            this.Heading6 = new MarkdownStyle
+            Heading6 = new MarkdownStyle
             {
                 Attributes = FontAttributes.Bold,
                 FontSize = 14,
             };
 
-            this.Link = new MarkdownStyle
+            Link = new MarkdownStyle
             {
                 Attributes = FontAttributes.None,
                 FontSize = 12,
             };
 
-            this.Code = new MarkdownStyle
+            Code = new MarkdownStyle
             {
                 Attributes = FontAttributes.None,
                 FontSize = 12,
             };
 
-            this.Quote = new MarkdownStyle
+            Quote = new MarkdownStyle
             {
                 Attributes = FontAttributes.None,
                 BorderSize = 4,
@@ -70,7 +70,7 @@ namespace Axvr.Xamarin.Markdown
                 BackgroundColor = Color.Gray.MultiplyAlpha(.1),
             };
 
-            this.Separator = new MarkdownStyle
+            Separator = new MarkdownStyle
             {
                 BorderSize = 2,
             };
@@ -119,22 +119,22 @@ namespace Axvr.Xamarin.Markdown
     {
         public LightMarkdownTheme()
         {
-            this.BackgroundColor = DefaultBackgroundColor;
-            this.Paragraph.ForegroundColor = DefaultTextColor;
-            this.Heading1.ForegroundColor = DefaultTextColor;
-            this.Heading1.BorderColor = DefaultSeparatorColor;
-            this.Heading2.ForegroundColor = DefaultTextColor;
-            this.Heading2.BorderColor = DefaultSeparatorColor;
-            this.Heading3.ForegroundColor = DefaultTextColor;
-            this.Heading4.ForegroundColor = DefaultTextColor;
-            this.Heading5.ForegroundColor = DefaultTextColor;
-            this.Heading6.ForegroundColor = DefaultTextColor;
-            this.Link.ForegroundColor = DefaultAccentColor;
-            this.Code.ForegroundColor = DefaultTextColor;
-            this.Code.BackgroundColor = DefaultCodeBackground;
-            this.Quote.ForegroundColor = DefaultQuoteTextColor;
-            this.Quote.BorderColor = DefaultQuoteBorderColor;
-            this.Separator.BorderColor = DefaultSeparatorColor;
+            BackgroundColor = DefaultBackgroundColor;
+            Paragraph.ForegroundColor = DefaultTextColor;
+            Heading1.ForegroundColor = DefaultTextColor;
+            Heading1.BorderColor = DefaultSeparatorColor;
+            Heading2.ForegroundColor = DefaultTextColor;
+            Heading2.BorderColor = DefaultSeparatorColor;
+            Heading3.ForegroundColor = DefaultTextColor;
+            Heading4.ForegroundColor = DefaultTextColor;
+            Heading5.ForegroundColor = DefaultTextColor;
+            Heading6.ForegroundColor = DefaultTextColor;
+            Link.ForegroundColor = DefaultAccentColor;
+            Code.ForegroundColor = DefaultTextColor;
+            Code.BackgroundColor = DefaultCodeBackground;
+            Quote.ForegroundColor = DefaultQuoteTextColor;
+            Quote.BorderColor = DefaultQuoteBorderColor;
+            Separator.BorderColor = DefaultSeparatorColor;
         }
 
         public static readonly Color DefaultBackgroundColor = Color.FromHex("#ffffff");
@@ -156,22 +156,22 @@ namespace Axvr.Xamarin.Markdown
     {
         public DarkMarkdownTheme()
         {
-            this.BackgroundColor = DefaultBackgroundColor;
-            this.Paragraph.ForegroundColor = DefaultTextColor;
-            this.Heading1.ForegroundColor = DefaultTextColor;
-            this.Heading1.BorderColor = DefaultSeparatorColor;
-            this.Heading2.ForegroundColor = DefaultTextColor;
-            this.Heading2.BorderColor = DefaultSeparatorColor;
-            this.Heading3.ForegroundColor = DefaultTextColor;
-            this.Heading4.ForegroundColor = DefaultTextColor;
-            this.Heading5.ForegroundColor = DefaultTextColor;
-            this.Heading6.ForegroundColor = DefaultTextColor;
-            this.Link.ForegroundColor = DefaultAccentColor;
-            this.Code.ForegroundColor = DefaultTextColor;
-            this.Code.BackgroundColor = DefaultCodeBackground;
-            this.Quote.ForegroundColor = DefaultQuoteTextColor;
-            this.Quote.BorderColor = DefaultQuoteBorderColor;
-            this.Separator.BorderColor = DefaultSeparatorColor;
+            BackgroundColor = DefaultBackgroundColor;
+            Paragraph.ForegroundColor = DefaultTextColor;
+            Heading1.ForegroundColor = DefaultTextColor;
+            Heading1.BorderColor = DefaultSeparatorColor;
+            Heading2.ForegroundColor = DefaultTextColor;
+            Heading2.BorderColor = DefaultSeparatorColor;
+            Heading3.ForegroundColor = DefaultTextColor;
+            Heading4.ForegroundColor = DefaultTextColor;
+            Heading5.ForegroundColor = DefaultTextColor;
+            Heading6.ForegroundColor = DefaultTextColor;
+            Link.ForegroundColor = DefaultAccentColor;
+            Code.ForegroundColor = DefaultTextColor;
+            Code.BackgroundColor = DefaultCodeBackground;
+            Quote.ForegroundColor = DefaultQuoteTextColor;
+            Quote.BorderColor = DefaultQuoteBorderColor;
+            Separator.BorderColor = DefaultSeparatorColor;
         }
 
         public static readonly Color DefaultBackgroundColor = Color.FromHex("#2b303b");
