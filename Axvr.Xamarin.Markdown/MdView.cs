@@ -333,7 +333,6 @@ namespace Axvr.Xamarin.Markdown
 
             heading.BindingContext = new Templates.HeadingAstNode
             {
-                Text = $"Heading {block.Level}",
                 FormattedText = CreateFormatted(block.Inline)
             };
 
