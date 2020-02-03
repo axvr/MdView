@@ -77,5 +77,5 @@ If you want to contribute code please file an issue and create a branch off of t
 
 ## License
 
-Copyright © 2020 [Alex Vear](https://axvr.io) <av@axvr.io>
-Copyright © 2017 [Aloïs Deniel](http://aloisdeniel.github.io)
+- Copyright © 2020 [Alex Vear](https://axvr.io)
+- Copyright © 2017 [Aloïs Deniel](http://aloisdeniel.github.io)
