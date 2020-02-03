@@ -7,8 +7,19 @@ using System.Diagnostics;
 
 namespace Axvr.Xamarin.Markdown.Extensions
 {
+    /// <summary>
+    /// Image extension methods used in <see cref="MdView"/>.
+    /// </summary>
     public static class ImageExtensions
     {
+        /// <summary>
+        /// Render SVG images from a URI.
+        /// </summary>
+        /// <remarks>
+        /// This uses SkiaSharp as the SVG renderer, however SkiaSharp is
+        /// fairly limited in terms of the complexity of the SVGs it is able to
+        /// render.
+        /// </remarks>
         public static void RenderSvg(this Image view, string uri)
         {
             try
@@ -19,6 +30,7 @@ namespace Axvr.Xamarin.Markdown.Extensions
                 req.BeginGetResponse((ar) => 
                 {
                     var res = (ar.AsyncState as HttpWebRequest).EndGetResponse(ar) as HttpWebResponse;
+
                     using (var stream = res.GetResponseStream())
                     {
                         if (stream != null)

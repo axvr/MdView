@@ -5,8 +5,6 @@ using Xamarin.Forms;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.IO;
-using Axvr.Xamarin.Markdown.Extensions;
 using Xamarin.Essentials;
 
 namespace Axvr.Xamarin.Markdown
@@ -204,6 +202,14 @@ namespace Axvr.Xamarin.Markdown
 
         public static readonly BindableProperty UnorderedListTemplateProperty = BindableProperty.Create(nameof(UnorderedListTemplate), typeof(DataTemplate), typeof(MdView), new DataTemplate(typeof(Templates.UnorderedList)), propertyChanged: OnMarkdownChanged);
 
+        public DataTemplate ImageTemplate
+        {
+            get { return (DataTemplate)GetValue(ImageTemplateProperty); }
+            set { SetValue(ImageTemplateProperty, value); }
+        }
+
+        public static readonly BindableProperty ImageTemplateProperty = BindableProperty.Create(nameof(ImageTemplate), typeof(DataTemplate), typeof(MdView), new DataTemplate(typeof(Templates.Image)), propertyChanged: OnMarkdownChanged);
+
         #endregion
 
 
@@ -238,7 +244,7 @@ namespace Axvr.Xamarin.Markdown
                     break;
 
                 case ListItemBlock listItem:
-                    views.AddRange(Render(listItem));
+                    views.AddRange(RenderBlocks(listItem.AsEnumerable()));
                     break;
 
                 case ThematicBreakBlock thematicBreak:
@@ -296,11 +302,6 @@ namespace Axvr.Xamarin.Markdown
             };
 
             return list;
-        }
-
-        private IEnumerable<View> Render(ListItemBlock block)
-        {
-            return RenderBlocks(block.AsEnumerable());
         }
 
         private View Render(HeadingBlock block)
@@ -442,16 +443,11 @@ namespace Axvr.Xamarin.Markdown
 
                     if (link.IsImage)
                     {
-                        var image = new Image();
-
-                        if (Path.GetExtension(url) == ".svg")
+                        var image = ImageTemplate.CreateContent() as View;
+                        image.BindingContext = new Templates.ImageAstNode
                         {
-                            image.RenderSvg(url);
-                        }
-                        else
-                        {
-                            image.Source = url;
-                        }
+                            Url = url
+                        };
 
                         queuedViews.Add(image);
                         return new Span[0];
