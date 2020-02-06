@@ -21,14 +21,6 @@ namespace Axvr.Xamarin.Markdown
 
         public static readonly BindableProperty MarkdownProperty = BindableProperty.Create(nameof(Markdown), typeof(string), typeof(MdView), null, propertyChanged: OnMarkdownChanged);
 
-        public string RelativeUrlHost
-        {
-            get { return (string)GetValue(RelativeUrlHostProperty); }
-            set { SetValue(RelativeUrlHostProperty, value); }
-        }
-
-        public static readonly BindableProperty RelativeUrlHostProperty = BindableProperty.Create(nameof(RelativeUrlHost), typeof(string), typeof(MdView), null, propertyChanged: OnMarkdownChanged);
-
         static void OnMarkdownChanged(BindableObject bindable, object oldValue, object newValue)
         {
             var view = bindable as MdView;
@@ -435,11 +427,6 @@ namespace Axvr.Xamarin.Markdown
                     // TODO: make styling of this more customisable and less hacky.
 
                     var url = link.Url;
-
-                    if (!url.Contains(':'))
-                    {
-                        url = $"{RelativeUrlHost?.TrimEnd('/')}/{url.TrimStart('/')}";
-                    }
 
                     if (link.IsImage)
                     {
