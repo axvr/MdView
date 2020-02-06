@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <PropertyGroup>
-    <Version>0.2.0</Version>
+    <Version>0.2.1</Version>
     <Authors>Alex Vear</Authors>
     <PackageId>Axvr.Xamarin.Markdown</PackageId>
     <PackageIconUrl></PackageIconUrl>
