@@ -1,7 +1,4 @@
-﻿using Axvr.Xamarin.Markdown.Extensions;
-using System.IO;
-
-namespace Axvr.Xamarin.Markdown.Templates
+﻿namespace Axvr.Xamarin.Markdown.Templates
 {
     /// <summary>
     /// The <c>BindingContext</c> object passed to <see cref="MdView.ImageTemplate"/> on construction.
@@ -26,14 +23,7 @@ namespace Axvr.Xamarin.Markdown.Templates
 
             if (BindingContext is ImageAstNode node)
             {
-                if (Path.GetExtension(node.Url) == ".svg")
-                {
-                    this.RenderSvg(node.Url);
-                }
-                else
-                {
-                    Source = node.Url;
-                }
+                Source = node.Url;
             }
         }
     }

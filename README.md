@@ -22,7 +22,6 @@ Unfortunately, Xamarin.Forms string rendering has some limitations...
 
 - **Inlined images aren't supported** (*Xamarin.Forms formatted strings doesn't support inlined views*) : They will be displayed after the block they are referenced from.
 - **Links are only clickable at a leaf block level**  (*Xamarin.Forms formatted strings doesn't support span user interactions*) : if a leaf block contains more than one link, the user is prompted. This is almost a feature since text may be too small to be enough precise! ;)
-- **SVG rendering is very limited** (*The SVG rendering is based on SkiaSharp which doesn't seem to manage well all svg renderings*)
 
 ## Contributions
 
@@ -32,7 +31,6 @@ Contributions are welcome! If you find a bug please report it and if you want a 
 
 - [MarkdownView](https://github.com/dotnet-ad/MarkdownView) — from which this package was forked.
 - [Markdig](https://github.com/lunet-io/markdig) —  used for Markdown parsing.
-- [SkiaSharp](https://github.com/mono/SkiaSharp) — used for SVG rendering.
 
 ## License
 
