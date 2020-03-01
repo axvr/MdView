@@ -1,6 +1,8 @@
 # MdView *for Xamarin.Forms*
 
-The flexible Markdown control for Xamarin.Forms.
+*The flexible Markdown control for Xamarin.Forms.*
+
+[![MdView CI](https://github.com/axvr/MdView/workflows/MdView%20CI/badge.svg)](https://github.com/axvr/MdView/actions?query=workflow%3A%22MdView+CI%22)
 
 *Note: this package is still pre-alpha. It will **not** be available on [NuGet](https://nuget.org/) until `v1.0`*
 
