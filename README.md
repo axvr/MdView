@@ -4,7 +4,7 @@
 
 [![MdView CI](https://github.com/axvr/MdView/workflows/MdView%20CI/badge.svg)](https://github.com/axvr/MdView/actions?query=workflow%3A%22MdView+CI%22)
 
-*Note: this package is still pre-alpha. It will **not** be available on [NuGet](https://nuget.org/) until `v1.0`*
+*Note: this package is still pre-alpha. Please wait for `v1.0` before using it.*
 
 ## Gallery
 
@@ -36,5 +36,6 @@ Contributions are welcome! If you find a bug please report it and if you want a 
 
 This package is licenced under the **MIT licence**. A full copy of the licence text can be found in the [`LICENSE`](https://github.com/axvr/MdView/blob/master/LICENSE) file provided.
 
-- Copyright © 2020 [Alex Vear](https://axvr.io)
-- Copyright © 2017 [Aloïs Deniel](http://aloisdeniel.github.io)
+- Copyright © 2020, [Numerous Technology](https://numerous.app).
+- Copyright © 2020, [Alex Vear](https://axvr.io).
+- Copyright © 2017, [Aloïs Deniel](http://aloisdeniel.github.io).

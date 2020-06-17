@@ -12,7 +12,7 @@
     <Title>MdView for Xamarin.Forms</Title>
     <Summary>The flexible Markdown control for Xamarin.Forms.</Summary>
     <Description>A highly customisable Markdown control for Xamarin.Forms.</Description>
-    <Copyright>Copyright © 2020 Alex Vear, 2017 Aloïs Deniel</Copyright>
+    <Copyright>Copyright © 2020 Numerous Technology, 2020 Alex Vear, 2017 Aloïs Deniel</Copyright>
     <IsPackable>true</IsPackable>
     <RepositoryUrl>https://github.com/axvr/MdView</RepositoryUrl>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
