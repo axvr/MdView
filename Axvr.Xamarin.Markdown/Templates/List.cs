@@ -58,6 +58,13 @@ namespace Axvr.Xamarin.Markdown.Templates
 
                     if (bullet != null)
                     {
+                        // Handle nested lists.
+                        if (view is List)
+                        {
+                            position--;  // Counteract the increment later on.
+                            bullet.Opacity = 0;
+                        }
+
                         item.Children.Add(bullet);
                     }
 
