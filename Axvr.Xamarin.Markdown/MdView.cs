@@ -10,8 +10,13 @@ using System.Text;
 
 namespace Axvr.Xamarin.Markdown
 {
-    public class MdView : ContentView
+    public class MdView : StackLayout
     {
+        public MdView() : base()
+        {
+            Spacing = 10;
+        }
+
         public Action<string> NavigateToLink { get; set; } = (s) => Launcher.TryOpenAsync(s);
 
         public string Markdown
@@ -28,16 +33,11 @@ namespace Axvr.Xamarin.Markdown
             view.RenderMarkdown();
         }
 
-        private StackLayout stack;
-
         private List<KeyValuePair<string, string>> links = new List<KeyValuePair<string, string>>();
 
         private void RenderMarkdown()
         {
-            stack = new StackLayout()
-            {
-                Spacing = 10, // TODO: allow configuration of spacing (convert MdView into a stacklayout, or provide access).
-            };
+            Children.Clear();
 
             if (!string.IsNullOrEmpty(Markdown))
             {
@@ -46,11 +46,9 @@ namespace Axvr.Xamarin.Markdown
 
                 foreach (var view in views)
                 {
-                    stack.Children.Add(view);
+                    Children.Add(view);
                 }
             }
-
-            Content = stack;
         }
 
         private IEnumerable<View> RenderBlocks(IEnumerable<Block> blocks)
