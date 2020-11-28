@@ -6,9 +6,14 @@
     public class ImageData
     {
         /// <summary>
-        /// The URL of the image to render.
+        /// The URI of the image to render.
         /// </summary>
         public string Uri { get; set; }
+
+        /// <summary>
+        /// Title tag of the image.  Can be used as alt text.
+        /// </summary>
+        public string Title { get; set; }
     }
 
     /// <summary>

@@ -433,7 +433,8 @@ namespace Axvr.Xamarin.Markdown
                         var image = ImageTemplate.CreateContent() as View;
                         image.BindingContext = new Templates.ImageData
                         {
-                            Uri = url
+                            Uri = url,
+                            Title = link.Title
                         };
 
                         queuedViews.Add(image);
