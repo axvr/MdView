@@ -15,24 +15,23 @@ namespace Axvr.Xamarin.Markdown.Templates
         public IEnumerable<View> Views { get; set; }
     }
 
+
     /// <summary>
-    /// Markdown "ordered list" template view.
+    /// Abstract representation of a Markdown list.
     /// </summary>
     ///
     /// <remarks>
-    /// Intended for use as <see cref="MdView.OrderedListTemplate"/>.
-    ///
-    /// The control will be passed required data as a <see cref="ListData"/>
-    /// object set as the <c>BindingContext</c> of the object; firing the
-    /// <see cref="OnBindingContextChanged"/> event handler, which renders the
-    /// Markdown.
+    /// Controls inheriting from this will be passed the child items in a
+    /// <see cref="ListData"/> object set as the <c>BindingContext</c> of the
+    /// control; firing the <see cref="List.OnBindingContextChanged"/> event
+    /// handler, which renders the Markdown.
     /// </remarks>
-    public class OrderedList : StackLayout
+    public abstract class List : StackLayout
     {
         /// <summary>
         /// Builds a new default <see cref="OrderedList"/> template.
         /// </summary>
-        public OrderedList() : base()
+        public List() : base()
         {
             Spacing = 0;
         }
@@ -46,7 +45,7 @@ namespace Axvr.Xamarin.Markdown.Templates
             {
                 Children.Clear();
 
-                int order = 1;
+                int position = 0;
 
                 foreach (var view in node.Views)
                 {
@@ -55,16 +54,53 @@ namespace Axvr.Xamarin.Markdown.Templates
                         Orientation = StackOrientation.Horizontal
                     };
 
-                    item.Children.Add(new Label { Text = $"{order}." });
+                    var bullet = GetBulletView(position);
+
+                    if (bullet != null)
+                    {
+                        item.Children.Add(bullet);
+                    }
+
                     item.Children.Add(view);
 
                     Children.Add(item);
 
-                    order++;
+                    position++;
                 }
             }
         }
+
+        /// <summary>
+        /// Get the view to represent the bullet of item at <paramref name="position"/>.
+        /// </summary>
+        ///
+        /// <param name="position">0-indexed list item position.</param>
+        /// <returns>A view representing the bullet.</returns>
+        protected abstract View GetBulletView(int position);
     }
+
+
+    /// <summary>
+    /// Markdown "ordered list" template view.
+    /// </summary>
+    ///
+    /// <remarks>
+    /// Intended for use as <see cref="MdView.OrderedListTemplate"/>.
+    ///
+    /// The control will be passed required data as a <see cref="ListData"/>
+    /// object set as the <c>BindingContext</c> of the object; firing the
+    /// <see cref="List.OnBindingContextChanged"/> event handler, which renders the
+    /// Markdown.
+    /// </remarks>
+    public class OrderedList : List
+    {
+        /// <inheritdoc cref="List.GetBulletView(int)"/>
+        protected override View GetBulletView(int position)
+        {
+            return new Label { Text = $"{position + 1}." };
+        }
+    }
+
 
     /// <summary>
     /// Markdown "unordered list" template view.
@@ -75,41 +111,15 @@ namespace Axvr.Xamarin.Markdown.Templates
     ///
     /// The control will be passed required data as a <see cref="ListData"/>
     /// object set as the <c>BindingContext</c> of the object; firing the
-    /// <see cref="OnBindingContextChanged"/> event handler, which renders the
+    /// <see cref="List.OnBindingContextChanged"/> event handler, which renders the
     /// Markdown.
     /// </remarks>
-    public class UnorderedList : StackLayout
+    public class UnorderedList : List
     {
-        /// <summary>
-        /// Builds a new <see cref="UnorderedList"/> template.
-        /// </summary>
-        public UnorderedList() : base()
+        /// <inheritdoc cref="List.GetBulletView(int)"/>
+        protected override View GetBulletView(int position)
         {
-            Spacing = 0;
-        }
-
-        /// <inheritdoc cref="Label.OnBindingContextChanged"/>
-        protected override void OnBindingContextChanged()
-        {
-            base.OnBindingContextChanged();
-
-            if (BindingContext is ListData node)
-            {
-                Children.Clear();
-
-                foreach (var view in node.Views)
-                {
-                    var item = new StackLayout
-                    {
-                        Orientation = StackOrientation.Horizontal
-                    };
-
-                    item.Children.Add(new Label { Text = "•" });
-                    item.Children.Add(view);
-
-                    Children.Add(item);
-                }
-            }
+            return new Label { Text = "•" };
         }
     }
 }
