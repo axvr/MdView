@@ -1,4 +1,5 @@
-﻿using Xamarin.Forms;
+﻿using System.Collections.Generic;
+using Xamarin.Forms;
 
 namespace Axvr.Xamarin.Markdown.Templates
 {
@@ -10,7 +11,7 @@ namespace Axvr.Xamarin.Markdown.Templates
         /// <summary>
         /// The body of the block quote.
         /// </summary>
-        public View View { get; set; }
+        public IEnumerable<View> Views { get; set; }
     }
 
     /// <summary>
@@ -40,7 +41,10 @@ namespace Axvr.Xamarin.Markdown.Templates
             Content = _content;
         }
 
+        // TODO: make the spacing configurable.
         private readonly StackLayout _content = new StackLayout { Orientation = StackOrientation.Horizontal };
+
+        // TODO: make this configurable.
         private readonly BoxView _separator = new BoxView { WidthRequest = 4, Color = Color.FromHex("#eaecef") };
 
         /// <inheritdoc cref="CodeBlock.OnBindingContextChanged"/>
@@ -55,7 +59,15 @@ namespace Axvr.Xamarin.Markdown.Templates
                     _content.Children.RemoveAt(1);
                 }
 
-                _content.Children.Add(node.View);
+                // TODO: make this configurable.
+                var body = new StackLayout();
+
+                foreach (var view in node.Views)
+                {
+                    body.Children.Add(view);
+                }
+
+                _content.Children.Add(body);
             }
         }
     }

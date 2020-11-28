@@ -363,16 +363,9 @@ namespace Axvr.Xamarin.Markdown
         {
             var blockQuote = BlockQuoteTemplate.CreateContent() as View;
 
-            var inner = new StackLayout();
-
-            foreach (var view in RenderBlocks(block.AsEnumerable()))
-            {
-                inner.Children.Add(view);
-            }
-
             blockQuote.BindingContext = new Templates.BlockQuoteData
             {
-                View = inner
+                Views = RenderBlocks(block.AsEnumerable())
             };
 
             return blockQuote;
