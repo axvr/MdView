@@ -288,7 +288,7 @@ namespace Axvr.Xamarin.Markdown
                 list = UnorderedListTemplate.CreateContent() as View;
             }
 
-            list.BindingContext = new Templates.ListAstNode
+            list.BindingContext = new Templates.ListData
             {
                 Views = views
             };
@@ -324,7 +324,7 @@ namespace Axvr.Xamarin.Markdown
                     throw new NotImplementedException("Header levels 7+ are not implemented.");
             }
 
-            heading.BindingContext = new Templates.HeadingAstNode
+            heading.BindingContext = new Templates.HeadingData
             {
                 FormattedText = CreateFormatted(block.Inline)
             };
@@ -338,7 +338,7 @@ namespace Axvr.Xamarin.Markdown
         {
             var paragraph = ParagraphTemplate.CreateContent() as View;
 
-            paragraph.BindingContext = new Templates.ParagraphAstNode
+            paragraph.BindingContext = new Templates.ParagraphData
             {
                 FormattedText = CreateFormatted(block.Inline)
             };
@@ -359,7 +359,7 @@ namespace Axvr.Xamarin.Markdown
                 inner.Children.Add(view);
             }
 
-            blockQuote.BindingContext = new Templates.BlockQuoteAstNode
+            blockQuote.BindingContext = new Templates.BlockQuoteData
             {
                 View = inner
             };
@@ -371,7 +371,7 @@ namespace Axvr.Xamarin.Markdown
         {
             var codeblock = CodeBlockTemplate.CreateContent() as View;
 
-            codeblock.BindingContext = new Templates.CodeBlockAstNode
+            codeblock.BindingContext = new Templates.CodeBlockData
             {
                 Text = string.Join(Environment.NewLine, block.Lines)
             };
@@ -431,9 +431,9 @@ namespace Axvr.Xamarin.Markdown
                     if (link.IsImage)
                     {
                         var image = ImageTemplate.CreateContent() as View;
-                        image.BindingContext = new Templates.ImageAstNode
+                        image.BindingContext = new Templates.ImageData
                         {
-                            Url = url
+                            Uri = url
                         };
 
                         queuedViews.Add(image);

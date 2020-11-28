@@ -5,7 +5,7 @@ namespace Axvr.Xamarin.Markdown.Templates
     /// <summary>
     /// The <c>BindingContext</c> object passed to <see cref="MdView.CodeBlockTemplate"/> on construction.
     /// </summary>
-    public class CodeBlockAstNode
+    public class CodeBlockData
     {
         public string Text { get; set; }
     }
@@ -14,7 +14,7 @@ namespace Axvr.Xamarin.Markdown.Templates
     /// Markdown "code block" template view. Intended for use as <see cref="MdView.CodeBlockTemplate"/>.
     /// </summary>
     /// <remarks>
-    /// The control will be passed required data as a <see cref="CodeBlockAstNode"/>
+    /// The control will be passed required data as a <see cref="CodeBlockData"/>
     /// object set as the <c>BindingContext</c> of the object; firing the
     /// <see cref="OnBindingContextChanged"/> event handler, which renders the Markdown.
     /// </remarks>
@@ -51,7 +51,7 @@ namespace Axvr.Xamarin.Markdown.Templates
         {
             base.OnBindingContextChanged();
 
-            if (BindingContext is CodeBlockAstNode node)
+            if (BindingContext is CodeBlockData node)
             {
                 Text = node.Text;
             }

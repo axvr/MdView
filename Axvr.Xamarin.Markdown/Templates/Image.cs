@@ -3,12 +3,12 @@
     /// <summary>
     /// The <c>BindingContext</c> object passed to <see cref="MdView.ImageTemplate"/> on construction.
     /// </summary>
-    public class ImageAstNode
+    public class ImageData
     {
         /// <summary>
         /// The URL of the image to render.
         /// </summary>
-        public string Url { get; set; }
+        public string Uri { get; set; }
     }
 
     /// <summary>
@@ -21,9 +21,9 @@
         {
             base.OnBindingContextChanged();
 
-            if (BindingContext is ImageAstNode node)
+            if (BindingContext is ImageData node)
             {
-                Source = node.Url;
+                Source = node.Uri;
             }
         }
     }

@@ -7,7 +7,7 @@ namespace Axvr.Xamarin.Markdown.Templates
     /// The <c>BindingContext</c> object passed to <see cref="MdView.UnorderedListTemplate"/>
     /// and <see cref="MdView.OrderedListTemplate"/> on construction.
     /// </summary>
-    public class ListAstNode
+    public class ListData
     {
         /// <summary>
         /// The views which should be the body of each list item.
@@ -19,7 +19,7 @@ namespace Axvr.Xamarin.Markdown.Templates
     /// Markdown "ordered list" template view. Intended for use as <see cref="MdView.OrderedListTemplate"/>.
     /// </summary>
     /// <remarks>
-    /// The control will be passed required data as a <see cref="ListAstNode"/>
+    /// The control will be passed required data as a <see cref="ListData"/>
     /// object set as the <c>BindingContext</c> of the object; firing the
     /// <see cref="OnBindingContextChanged"/> event handler, which renders the
     /// Markdown.
@@ -39,7 +39,7 @@ namespace Axvr.Xamarin.Markdown.Templates
         {
             base.OnBindingContextChanged();
 
-            if (BindingContext is ListAstNode node)
+            if (BindingContext is ListData node)
             {
                 Children.Clear();
 
@@ -67,7 +67,7 @@ namespace Axvr.Xamarin.Markdown.Templates
     /// Markdown "unordered list" template view. Intended for use as <see cref="MdView.UnorderedListTemplate"/>.
     /// </summary>
     /// <remarks>
-    /// The control will be passed required data as a <see cref="ListAstNode"/>
+    /// The control will be passed required data as a <see cref="ListData"/>
     /// object set as the <c>BindingContext</c> of the object; firing the
     /// <see cref="OnBindingContextChanged"/> event handler, which renders the
     /// Markdown.
@@ -87,7 +87,7 @@ namespace Axvr.Xamarin.Markdown.Templates
         {
             base.OnBindingContextChanged();
 
-            if (BindingContext is ListAstNode node)
+            if (BindingContext is ListData node)
             {
                 Children.Clear();
 

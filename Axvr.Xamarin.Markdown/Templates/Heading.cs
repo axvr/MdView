@@ -12,7 +12,7 @@ namespace Axvr.Xamarin.Markdown.Templates
     /// <seealso cref="MdView.Heading4Template"/>
     /// <seealso cref="MdView.Heading5Template"/>
     /// <seealso cref="MdView.Heading6Template"/>
-    public class HeadingAstNode
+    public class HeadingData
     {
         public string Text { get; set; }
         public FormattedString FormattedText { get; set; }
@@ -22,7 +22,7 @@ namespace Axvr.Xamarin.Markdown.Templates
     /// Base Markdown "heading" template view. Intended for use in <see cref="MdView"/>.
     /// </summary>
     /// <remarks>
-    /// The control will be passed required data as a <see cref="HeadingAstNode"/>
+    /// The control will be passed required data as a <see cref="HeadingData"/>
     /// object set as the <c>BindingContext</c> of the object; firing the
     /// <see cref="OnBindingContextChanged"/> event handler, which renders the Markdown.
     /// </remarks>
@@ -42,7 +42,7 @@ namespace Axvr.Xamarin.Markdown.Templates
         {
             base.OnBindingContextChanged();
 
-            if (BindingContext is HeadingAstNode node)
+            if (BindingContext is HeadingData node)
             {
                 if (node.FormattedText == null)
                 {

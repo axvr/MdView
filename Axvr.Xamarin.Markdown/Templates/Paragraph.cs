@@ -5,7 +5,7 @@ namespace Axvr.Xamarin.Markdown.Templates
     /// <summary>
     /// The <c>BindingContext</c> object passed to <see cref="MdView.ParagraphTemplate"/> on construction.
     /// </summary>
-    public class ParagraphAstNode
+    public class ParagraphData
     {
         public string Text { get; set; }
         public FormattedString FormattedText { get; set; }
@@ -15,7 +15,7 @@ namespace Axvr.Xamarin.Markdown.Templates
     /// Markdown "paragraph" template view. Intended for use as <see cref="MdView.ParagraphTemplate"/>.
     /// </summary>
     /// <remarks>
-    /// The control will be passed required data as a <see cref="ParagraphAstNode"/>
+    /// The control will be passed required data as a <see cref="ParagraphData"/>
     /// object set as the <c>BindingContext</c> of the object; firing the
     /// <see cref="OnBindingContextChanged"/> event handler, which renders the Markdown.
     /// </remarks>
@@ -26,7 +26,7 @@ namespace Axvr.Xamarin.Markdown.Templates
         {
             base.OnBindingContextChanged();
 
-            if (BindingContext is ParagraphAstNode node)
+            if (BindingContext is ParagraphData node)
             {
                 if (node.FormattedText == null)
                 {
