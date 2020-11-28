@@ -15,7 +15,14 @@ namespace Axvr.Xamarin.Markdown.Templates
     /// <seealso cref="MdView.Heading6Template"/>
     public class HeadingData
     {
+        /// <summary>
+        /// Unformatted heading text.
+        /// </summary>
         public string Text { get; set; }
+
+        /// <summary>
+        /// Formatted heading text.
+        /// </summary>
         public FormattedString FormattedText { get; set; }
     }
 

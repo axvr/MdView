@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using Xamarin.Essentials;
+using System.Text;
 
 namespace Axvr.Xamarin.Markdown
 {
@@ -261,7 +262,7 @@ namespace Axvr.Xamarin.Markdown
             return views;
         }
 
-        private View Render(ThematicBreakBlock block)
+        private View Render(ThematicBreakBlock _)
         {
             return SeparatorTemplate.CreateContent() as View;
         }
@@ -324,9 +325,12 @@ namespace Axvr.Xamarin.Markdown
                     throw new NotImplementedException("Header levels 7+ are not implemented.");
             }
 
+            var text = CreateText(block.Inline);
+
             heading.BindingContext = new Templates.HeadingData
             {
-                FormattedText = CreateFormatted(block.Inline)
+                Text = text.Unformatted,
+                FormattedText = text.Formatted
             };
 
             AttachLinks(heading);
@@ -338,9 +342,12 @@ namespace Axvr.Xamarin.Markdown
         {
             var paragraph = ParagraphTemplate.CreateContent() as View;
 
+            var text = CreateText(block.Inline);
+
             paragraph.BindingContext = new Templates.ParagraphData
             {
-                FormattedText = CreateFormatted(block.Inline)
+                Text = text.Unformatted,
+                FormattedText = text.Formatted
             };
 
             AttachLinks(paragraph);
@@ -379,6 +386,28 @@ namespace Axvr.Xamarin.Markdown
             return codeblock;
         }
 
+
+        #region Text
+
+        private (string Unformatted, FormattedString Formatted) CreateText(ContainerInline inlines)
+        {
+            var formatted = CreateFormatted(inlines);
+            var unformatted = CreateUnformatted(formatted);
+            return (unformatted, formatted);
+        }
+
+        private string CreateUnformatted(FormattedString formattedString)
+        {
+            var str = new StringBuilder();
+
+            foreach (var span in formattedString.Spans)
+            {
+                str.Append(span.Text);
+            }
+
+            return str.ToString();
+        }
+
         private FormattedString CreateFormatted(ContainerInline inlines)
         {
             var fs = new FormattedString();
@@ -397,6 +426,9 @@ namespace Axvr.Xamarin.Markdown
 
             return fs;
         }
+
+        #endregion Text
+
 
         private Span[] CreateSpans(Inline inline, FontAttributes attributes = FontAttributes.None, Color? foregroundColor = null)
         {

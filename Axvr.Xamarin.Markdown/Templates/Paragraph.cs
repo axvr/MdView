@@ -7,7 +7,14 @@ namespace Axvr.Xamarin.Markdown.Templates
     /// </summary>
     public class ParagraphData
     {
+        /// <summary>
+        /// Unformatted paragraph text.
+        /// </summary>
         public string Text { get; set; }
+
+        /// <summary>
+        /// Formatted paragraph text.
+        /// </summary>
         public FormattedString FormattedText { get; set; }
     }
 

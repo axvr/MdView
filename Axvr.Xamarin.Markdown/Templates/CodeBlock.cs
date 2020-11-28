@@ -7,6 +7,9 @@ namespace Axvr.Xamarin.Markdown.Templates
     /// </summary>
     public class CodeBlockData
     {
+        /// <summary>
+        /// Code block content.
+        /// </summary>
         public string Text { get; set; }
     }
 
