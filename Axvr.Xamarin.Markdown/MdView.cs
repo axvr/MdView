@@ -57,7 +57,13 @@ namespace Axvr.Xamarin.Markdown
 
             foreach (var block in blocks)
             {
-                views.AddRange(Render(block));
+                foreach (var view in Render(block))
+                {
+                    // Remove "Null" items from the rendered Markdown content.
+                    if (view is Templates.Null) continue;
+
+                    views.Add(view);
+                }
             }
 
             return views;
