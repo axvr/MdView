@@ -12,9 +12,12 @@ namespace Axvr.Xamarin.Markdown.Templates
     }
 
     /// <summary>
-    /// Markdown "paragraph" template view. Intended for use as <see cref="MdView.ParagraphTemplate"/>.
+    /// Markdown "paragraph" template view.
     /// </summary>
+    ///
     /// <remarks>
+    /// Intended for use as <see cref="MdView.ParagraphTemplate"/>.
+    ///
     /// The control will be passed required data as a <see cref="ParagraphData"/>
     /// object set as the <c>BindingContext</c> of the object; firing the
     /// <see cref="OnBindingContextChanged"/> event handler, which renders the Markdown.

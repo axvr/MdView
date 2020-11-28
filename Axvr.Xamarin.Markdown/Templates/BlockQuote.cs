@@ -14,9 +14,12 @@ namespace Axvr.Xamarin.Markdown.Templates
     }
 
     /// <summary>
-    /// Markdown "block quote" template view. Intended for use as <see cref="MdView.BlockQuoteTemplate"/>.
+    /// Markdown "block quote" template view.
     /// </summary>
+    ///
     /// <remarks>
+    /// Intended for use as <see cref="MdView.BlockQuoteTemplate"/>.
+    ///
     /// The control will be passed required data as a <see cref="BlockQuoteData"/>
     /// object set as the <c>BindingContext</c> of the object; firing the
     /// <see cref="OnBindingContextChanged"/> event handler, which renders the Markdown.

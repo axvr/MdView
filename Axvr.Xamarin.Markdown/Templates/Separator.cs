@@ -3,8 +3,12 @@
 namespace Axvr.Xamarin.Markdown.Templates
 {
     /// <summary>
-    /// Markdown "separator" template view. Intended for use as <see cref="MdView.SeparatorTemplate"/>.
+    /// Markdown "separator" template view.
     /// </summary>
+    ///
+    /// <remarks>
+    /// Intended for use as <see cref="MdView.SeparatorTemplate"/>.
+    /// </remarks>
     public class Separator : BoxView
     {
         /// <summary>

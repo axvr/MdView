@@ -16,9 +16,12 @@ namespace Axvr.Xamarin.Markdown.Templates
     }
 
     /// <summary>
-    /// Markdown "ordered list" template view. Intended for use as <see cref="MdView.OrderedListTemplate"/>.
+    /// Markdown "ordered list" template view.
     /// </summary>
+    ///
     /// <remarks>
+    /// Intended for use as <see cref="MdView.OrderedListTemplate"/>.
+    ///
     /// The control will be passed required data as a <see cref="ListData"/>
     /// object set as the <c>BindingContext</c> of the object; firing the
     /// <see cref="OnBindingContextChanged"/> event handler, which renders the
@@ -64,9 +67,12 @@ namespace Axvr.Xamarin.Markdown.Templates
     }
 
     /// <summary>
-    /// Markdown "unordered list" template view. Intended for use as <see cref="MdView.UnorderedListTemplate"/>.
+    /// Markdown "unordered list" template view.
     /// </summary>
+    ///
     /// <remarks>
+    /// Intended for use as <see cref="MdView.UnorderedListTemplate"/>.
+    ///
     /// The control will be passed required data as a <see cref="ListData"/>
     /// object set as the <c>BindingContext</c> of the object; firing the
     /// <see cref="OnBindingContextChanged"/> event handler, which renders the

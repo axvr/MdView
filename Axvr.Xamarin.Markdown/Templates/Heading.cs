@@ -6,6 +6,7 @@ namespace Axvr.Xamarin.Markdown.Templates
     /// The <c>BindingContext</c> object for heading views, used to pass
     /// required data to the Markdown heading templates.
     /// </summary>
+    ///
     /// <seealso cref="MdView.Heading1Template"/>
     /// <seealso cref="MdView.Heading2Template"/>
     /// <seealso cref="MdView.Heading3Template"/>
@@ -19,8 +20,9 @@ namespace Axvr.Xamarin.Markdown.Templates
     }
 
     /// <summary>
-    /// Base Markdown "heading" template view. Intended for use in <see cref="MdView"/>.
+    /// Base Markdown "heading" template view.
     /// </summary>
+    ///
     /// <remarks>
     /// The control will be passed required data as a <see cref="HeadingData"/>
     /// object set as the <c>BindingContext</c> of the object; firing the
@@ -68,14 +70,22 @@ namespace Axvr.Xamarin.Markdown.Templates
     }
 
     /// <summary>
-    /// Markdown "heading 1" template view. Intended for use as <see cref="MdView.Heading1Template"/>.
+    /// Markdown "heading 1" template view.
     /// </summary>
+    ///
+    /// <remarks>
+    /// Intended for use as <see cref="MdView.Heading1Template"/>.
+    /// </remarks>
     public class Heading1 : Heading
     { }
 
     /// <summary>
-    /// Markdown "heading 2" template view. Intended for use as <see cref="MdView.Heading2Template"/>.
+    /// Markdown "heading 2" template view.
     /// </summary>
+    ///
+    /// <remarks>
+    /// Intended for use as <see cref="MdView.Heading2Template"/>.
+    /// </remarks>
     public class Heading2 : Heading
     {
         /// <inheritdoc cref="Heading.Heading"/>
@@ -86,8 +96,12 @@ namespace Axvr.Xamarin.Markdown.Templates
     }
 
     /// <summary>
-    /// Markdown "heading 3" template view. Intended for use as <see cref="MdView.Heading3Template"/>.
+    /// Markdown "heading 3" template view.
     /// </summary>
+    ///
+    /// <remarks>
+    /// Intended for use as <see cref="MdView.Heading3Template"/>.
+    /// </remarks>
     public class Heading3 : Heading
     {
         /// <inheritdoc cref="Heading.Heading"/>
@@ -98,8 +112,12 @@ namespace Axvr.Xamarin.Markdown.Templates
     }
 
     /// <summary>
-    /// Markdown "heading 4" template view. Intended for use as <see cref="MdView.Heading4Template"/>.
+    /// Markdown "heading 4" template view.
     /// </summary>
+    ///
+    /// <remarks>
+    /// Intended for use as <see cref="MdView.Heading4Template"/>.
+    /// </remarks>
     public class Heading4 : Heading
     {
         /// <inheritdoc cref="Heading.Heading"/>
@@ -110,8 +128,12 @@ namespace Axvr.Xamarin.Markdown.Templates
     }
 
     /// <summary>
-    /// Markdown "heading 5" template view. Intended for use as <see cref="MdView.Heading5Template"/>.
+    /// Markdown "heading 5" template view.
     /// </summary>
+    ///
+    /// <remarks>
+    /// Intended for use as <see cref="MdView.Heading5Template"/>.
+    /// </remarks>
     public class Heading5 : Heading
     {
         /// <inheritdoc cref="Heading.Heading"/>
@@ -122,8 +144,12 @@ namespace Axvr.Xamarin.Markdown.Templates
     }
 
     /// <summary>
-    /// Markdown "heading 6" template view. Intended for use as <see cref="MdView.Heading6Template"/>.
+    /// Markdown "heading 6" template view.
     /// </summary>
+    ///
+    /// <remarks>
+    /// Intended for use as <see cref="MdView.Heading6Template"/>.
+    /// </remarks>
     public class Heading6 : Heading
     {
         /// <inheritdoc cref="Heading.Heading"/>

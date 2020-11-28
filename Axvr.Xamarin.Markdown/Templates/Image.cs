@@ -11,14 +11,24 @@
         public string Uri { get; set; }
 
         /// <summary>
-        /// Title tag of the image.  Can be used as alt text.
+        /// Title of the image.
         /// </summary>
+        ///
+        /// <example>
+        /// <code>
+        /// ![](https://unsplash.it/200/300 "This is the image title")
+        /// </code>
+        /// </example>
         public string Title { get; set; }
     }
 
     /// <summary>
-    /// Markdown "image" template view. Intended for use as <see cref="MdView.ImageTemplate"/>.
+    /// Markdown "image" template view.
     /// </summary>
+    ///
+    /// <remarks>
+    /// Intended for use as <see cref="MdView.ImageTemplate"/>.
+    /// </remarks>
     public class Image : global::Xamarin.Forms.Image
     {
         /// <inheritdoc cref="global::Xamarin.Forms.Image.OnBindingContextChanged"/>

@@ -11,9 +11,12 @@ namespace Axvr.Xamarin.Markdown.Templates
     }
 
     /// <summary>
-    /// Markdown "code block" template view. Intended for use as <see cref="MdView.CodeBlockTemplate"/>.
+    /// Markdown "code block" template view.
     /// </summary>
+    ///
     /// <remarks>
+    /// Intended for use as <see cref="MdView.CodeBlockTemplate"/>.
+    ///
     /// The control will be passed required data as a <see cref="CodeBlockData"/>
     /// object set as the <c>BindingContext</c> of the object; firing the
     /// <see cref="OnBindingContextChanged"/> event handler, which renders the Markdown.
