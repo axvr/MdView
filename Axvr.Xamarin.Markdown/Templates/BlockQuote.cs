@@ -28,6 +28,8 @@ namespace Axvr.Xamarin.Markdown.Templates
     /// </remarks>
     public class BlockQuote : Frame
     {
+        // TODO: make this default control more configurable.
+
         /// <summary>
         /// Builds a new default <see cref="BlockQuote"/> template.
         /// </summary>
@@ -42,10 +44,8 @@ namespace Axvr.Xamarin.Markdown.Templates
             Content = _content;
         }
 
-        // TODO: make the spacing configurable.
         private readonly StackLayout _content = new StackLayout { Orientation = StackOrientation.Horizontal };
 
-        // TODO: make this configurable.
         private readonly BoxView _separator = new BoxView { WidthRequest = 4, Color = Color.FromHex("#eaecef") };
 
         /// <inheritdoc cref="CodeBlock.OnBindingContextChanged"/>
@@ -60,7 +60,6 @@ namespace Axvr.Xamarin.Markdown.Templates
                     _content.Children.RemoveAt(1);
                 }
 
-                // TODO: make this configurable.
                 var body = new StackLayout();
 
                 foreach (var view in node.Views)

@@ -27,7 +27,13 @@ namespace Axvr.Xamarin.Markdown
             set => SetValue(MarkdownProperty, value);
         }
 
-        public static readonly BindableProperty MarkdownProperty = BindableProperty.Create(nameof(Markdown), typeof(string), typeof(MdView), null, propertyChanged: OnMarkdownChanged);
+        public static readonly BindableProperty MarkdownProperty =
+            BindableProperty.Create(
+                propertyName: nameof(Markdown),
+                returnType: typeof(string),
+                declaringType: typeof(MdView),
+                defaultValue: null,
+                propertyChanged: OnMarkdownChanged);
 
 
         private static void OnMarkdownChanged(BindableObject bindable, object oldValue, object newValue)
@@ -249,6 +255,17 @@ namespace Axvr.Xamarin.Markdown
         public static readonly BindableProperty ImageTemplateProperty =
             CreateTemplateProperty(nameof(ImageTemplate), typeof(Templates.Image));
 
+
+        public DataTemplate SpanTemplate
+        {
+            get => (DataTemplate)GetValue(SpanTemplateProperty);
+            set => SetValue(SpanTemplateProperty, value);
+        }
+
+        public static readonly BindableProperty SpanTemplateProperty =
+            CreateTemplateProperty(nameof(SpanTemplate), typeof(Templates.Span));
+
+
         #endregion
 
 
@@ -469,73 +486,77 @@ namespace Axvr.Xamarin.Markdown
         #endregion Text
 
 
-        private Span[] CreateSpans(Inline inline, FontAttributes attributes = FontAttributes.None, Color? foregroundColor = null)
+        private Span[] CreateSpans(Inline inline, Templates.SpanAttributes attributes = Templates.SpanAttributes.None)
         {
             switch (inline)
             {
                 case LiteralInline literal:
-                    var span = new Span
+                    return new[]
                     {
-                        Text = literal.Content.Text.Substring(literal.Content.Start, literal.Content.Length),
-                        FontAttributes = attributes
+                        CreateSpan(new Templates.SpanData
+                        {
+                            Text = literal.Content.Text.Substring(literal.Content.Start, literal.Content.Length),
+                            Attributes = attributes
+                        })
                     };
 
-                    if (foregroundColor.HasValue)
-                    {
-                        span.ForegroundColor = foregroundColor.Value;
-                    }
-
-                    return new[] { span };
-
                 case EmphasisInline emphasis:
-                    var childAttributes = attributes | (emphasis.DelimiterCount == 2 ? FontAttributes.Bold : FontAttributes.Italic);
+                    var childAttributes = attributes | (emphasis.DelimiterCount == 2 ? Templates.SpanAttributes.Bold : Templates.SpanAttributes.Italic);
                     return emphasis.SelectMany(x => CreateSpans(x, childAttributes)).ToArray();
 
                 case LineBreakInline breakline:
-                    return new[] { new Span { Text = "\n" } };
+                    return new[] { CreateSpan(new Templates.SpanData { Text = Environment.NewLine }) };
+
+                case LinkInline link when link.IsImage:
+                    var image = ImageTemplate.CreateContent() as View;
+
+                    image.BindingContext = new Templates.ImageData
+                    {
+                        Uri = link.Url,
+                        Title = link.Title
+                    };
+
+                    queuedViews.Add(image);
+                    return new Span[0];
 
                 case LinkInline link:
-                    // TODO: make styling of this more customisable and less hacky.
-
-                    var url = link.Url;
-
-                    if (link.IsImage)
-                    {
-                        var image = ImageTemplate.CreateContent() as View;
-                        image.BindingContext = new Templates.ImageData
-                        {
-                            Uri = url,
-                            Title = link.Title
-                        };
-
-                        queuedViews.Add(image);
-                        return new Span[0];
-                    }
-                    else
-                    {
-                        var spans = link.SelectMany(x => CreateSpans(x, foregroundColor: Color.FromHex("#0366d6"))).ToArray();
-                        links.Add(new KeyValuePair<string, string>(string.Join("", spans.Select(x => x.Text)), url));
-                        return spans;
-                    }
+                    childAttributes = attributes | Templates.SpanAttributes.Link;
+                    var spans = link.SelectMany(x => CreateSpans(x, childAttributes)).ToArray();
+                    var linkTitle = string.IsNullOrEmpty(link.Title)
+                                  ? string.Join("", spans.Select(x => x.Text))
+                                  : link.Title;
+                    links.Add(new KeyValuePair<string, string>(linkTitle, link.Url));
+                    return spans;
 
                 case CodeInline code:
-                    // TODO: make this customisable + less hacky.
                     return new[]
                     {
-                        new Span
+                        CreateSpan(new Templates.SpanData
                         {
-                            Text = "\u2002" + code.Content + "\u2002",
-                            ForegroundColor = Color.FromHex("#24292e"),
-                            BackgroundColor = Color.FromHex("#f6f8fa"),
-                            FontFamily = Device.RuntimePlatform == Device.iOS
-                                       ? "Courier"
-                                       : "monospace"
-                        }
+                            Text = code.Content,
+                            Attributes = attributes | Templates.SpanAttributes.Monospace
+                        })
                     };
 
                 default:
                     Debug.WriteLine($"Can't render {inline.GetType()} inlines.");
                     return null;
+            }
+        }
+
+
+        private Span CreateSpan(Templates.SpanData data)
+        {
+            var template = SpanTemplate.CreateContent();
+
+            if (template is Span span)
+            {
+                span.BindingContext = data;
+                return span;
+            }
+            else
+            {
+                throw new NotSupportedException($"{nameof(SpanTemplate)} must be a {typeof(DataTemplate).FullName} of {typeof(Span).FullName}");
             }
         }
 
