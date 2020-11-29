@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <PropertyGroup>
-    <Version>0.2.1</Version>
+    <Version>0.3.0</Version>
     <Authors>Alex Vear</Authors>
     <PackageId>MdView</PackageId>
     <PackageIconUrl></PackageIconUrl>
@@ -14,10 +14,11 @@
     <Description>A highly customisable Markdown control for Xamarin.Forms.</Description>
     <Copyright>Copyright © 2020 Numerous Technology, 2020 Alex Vear, 2017 Aloïs Deniel</Copyright>
     <IsPackable>true</IsPackable>
-    <RepositoryUrl>https://github.com/axvr/MdView</RepositoryUrl>
+    <RepositoryUrl>https://github.com/NumerousTechnology/MdView</RepositoryUrl>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageTags>Xamarin;iOS;Android;md;Markdown</PackageTags>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <Company>Numerous</Company>
   </PropertyGroup>
 
   <ItemGroup>
