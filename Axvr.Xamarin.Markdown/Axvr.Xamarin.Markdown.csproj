@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <PropertyGroup>
-    <Version>0.3.0</Version>
+    <Version>0.4.0</Version>
     <Authors>Alex Vear</Authors>
     <PackageId>MdView</PackageId>
     <PackageIconUrl></PackageIconUrl>
