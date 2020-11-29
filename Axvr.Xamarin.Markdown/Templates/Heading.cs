@@ -26,6 +26,7 @@ namespace Axvr.Xamarin.Markdown.Templates
         public FormattedString FormattedText { get; set; }
     }
 
+
     /// <summary>
     /// Base Markdown "heading" template view.
     /// </summary>
@@ -76,6 +77,7 @@ namespace Axvr.Xamarin.Markdown.Templates
         }
     }
 
+
     /// <summary>
     /// Markdown "heading 1" template view.
     /// </summary>
@@ -85,6 +87,7 @@ namespace Axvr.Xamarin.Markdown.Templates
     /// </remarks>
     public class Heading1 : Heading
     { }
+
 
     /// <summary>
     /// Markdown "heading 2" template view.
@@ -102,6 +105,7 @@ namespace Axvr.Xamarin.Markdown.Templates
         }
     }
 
+
     /// <summary>
     /// Markdown "heading 3" template view.
     /// </summary>
@@ -117,6 +121,7 @@ namespace Axvr.Xamarin.Markdown.Templates
             FontSize = Device.GetNamedSize(NamedSize.Medium, typeof(Label));
         }
     }
+
 
     /// <summary>
     /// Markdown "heading 4" template view.
@@ -134,6 +139,7 @@ namespace Axvr.Xamarin.Markdown.Templates
         }
     }
 
+
     /// <summary>
     /// Markdown "heading 5" template view.
     /// </summary>
@@ -149,6 +155,7 @@ namespace Axvr.Xamarin.Markdown.Templates
             FontSize = 14;
         }
     }
+
 
     /// <summary>
     /// Markdown "heading 6" template view.

@@ -13,6 +13,7 @@ namespace Axvr.Xamarin.Markdown.Templates
         public string Text { get; set; }
     }
 
+
     /// <summary>
     /// Markdown "code block" template view.
     /// </summary>

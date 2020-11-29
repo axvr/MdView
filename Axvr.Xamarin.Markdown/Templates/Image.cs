@@ -22,6 +22,7 @@
         public string Title { get; set; }
     }
 
+
     /// <summary>
     /// Markdown "image" template view.
     /// </summary>

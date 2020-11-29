@@ -14,6 +14,7 @@ namespace Axvr.Xamarin.Markdown.Templates
         public IEnumerable<View> Views { get; set; }
     }
 
+
     /// <summary>
     /// Markdown "block quote" template view.
     /// </summary>

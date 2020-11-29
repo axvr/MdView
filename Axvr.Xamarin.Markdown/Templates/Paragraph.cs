@@ -18,6 +18,7 @@ namespace Axvr.Xamarin.Markdown.Templates
         public FormattedString FormattedText { get; set; }
     }
 
+
     /// <summary>
     /// Markdown "paragraph" template view.
     /// </summary>
