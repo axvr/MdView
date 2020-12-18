@@ -109,7 +109,7 @@ namespace Axvr.Xamarin.Markdown
                 });
 
                 links = new List<KeyValuePair<string, string>>();
-            } 
+            }
         }
 
 

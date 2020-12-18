@@ -28,8 +28,6 @@ namespace Axvr.Xamarin.Markdown.Templates
     /// </remarks>
     public class BlockQuote : Frame
     {
-        // TODO: make this default control more configurable.
-
         /// <summary>
         /// Builds a new default <see cref="BlockQuote"/> template.
         /// </summary>
@@ -44,9 +42,6 @@ namespace Axvr.Xamarin.Markdown.Templates
             Content = _content;
         }
 
-        private readonly StackLayout _content = new StackLayout { Orientation = StackOrientation.Horizontal };
-
-        private readonly BoxView _separator = new BoxView { WidthRequest = 4, Color = Color.FromHex("#eaecef") };
 
         /// <inheritdoc cref="CodeBlock.OnBindingContextChanged"/>
         protected override void OnBindingContextChanged()
@@ -68,6 +63,58 @@ namespace Axvr.Xamarin.Markdown.Templates
                 }
 
                 _content.Children.Add(body);
+            }
+        }
+
+
+        private readonly BoxView _separator = new BoxView { WidthRequest = 4, Color = Color.FromHex("#eaecef") };
+
+
+        public static readonly BindableProperty SeparatorStyleProperty =
+            BindableProperty.Create(
+                propertyName: nameof(SeparatorStyle),
+                returnType: typeof(Style),
+                declaringType: typeof(BlockQuote),
+                defaultValue: new Style(typeof(BoxView)),
+                propertyChanged: OnSeparatorStyleChanged);
+
+        public Style SeparatorStyle
+        {
+            get => (Style)GetValue(SeparatorStyleProperty);
+            set => SetValue(SeparatorStyleProperty, value);
+        }
+
+        private static void OnSeparatorStyleChanged(object bindable, object oldValue, object newValue)
+        {
+            if (bindable is BlockQuote self && newValue is Style style)
+            {
+                self._separator.Style = style;
+            }
+        }
+
+
+        private readonly StackLayout _content = new StackLayout { Orientation = StackOrientation.Horizontal };
+
+
+        public static readonly BindableProperty ContentStyleProperty =
+            BindableProperty.Create(
+                propertyName: nameof(ContentStyle),
+                returnType: typeof(Style),
+                declaringType: typeof(BlockQuote),
+                defaultValue: new Style(typeof(StackLayout)),
+                propertyChanged: OnContentStyleChanged);
+
+        public Style ContentStyle
+        {
+            get => (Style)GetValue(ContentStyleProperty);
+            set => SetValue(ContentStyleProperty, value);
+        }
+
+        private static void OnContentStyleChanged(object bindable, object oldValue, object newValue)
+        {
+            if (bindable is BlockQuote self && newValue is Style style)
+            {
+                self._content.Style = style;
             }
         }
     }
