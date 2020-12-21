@@ -26,14 +26,19 @@ namespace Axvr.Xamarin.Markdown.Templates
     /// control; firing the <see cref="List.OnBindingContextChanged"/> event
     /// handler, which renders the Markdown.
     /// </remarks>
-    public abstract class List : StackLayout
+    public abstract class List : Grid
     {
         /// <summary>
         /// Builds a new default <see cref="OrderedList"/> template.
         /// </summary>
         public List() : base()
         {
-            Spacing = 0;
+            RowSpacing = 0;
+            ColumnDefinitions = new ColumnDefinitionCollection
+            {
+                new ColumnDefinition { Width = GridLength.Auto },
+                new ColumnDefinition { Width = GridLength.Auto }
+            };
         }
 
         /// <inheritdoc cref="Label.OnBindingContextChanged"/>
@@ -45,34 +50,30 @@ namespace Axvr.Xamarin.Markdown.Templates
             {
                 Children.Clear();
 
-                int position = 0;
+                RowDefinitions = new RowDefinitionCollection();
+
+                int realIndex = 0, visualIndex = 0;
 
                 foreach (var view in node.Views)
                 {
-                    var item = new StackLayout
-                    {
-                        Orientation = StackOrientation.Horizontal
-                    };
+                    RowDefinitions.Add(new RowDefinition { Height = GridLength.Auto });
 
-                    var bullet = GetBulletView(position);
-
-                    if (bullet != null)
+                    // Hide bullet on nested lists.
+                    if (! (view is List))
                     {
-                        // Handle nested lists.
-                        if (view is List)
+                        var bullet = GetBulletView(visualIndex);
+
+                        if (bullet != null)
                         {
-                            position--;  // Counteract the increment later on.
-                            bullet.Opacity = 0;
+                            Children.Add(bullet, 0, realIndex);
                         }
 
-                        item.Children.Add(bullet);
+                        visualIndex++;
                     }
 
-                    item.Children.Add(view);
+                    Children.Add(view, 1, realIndex);
 
-                    Children.Add(item);
-
-                    position++;
+                    realIndex++;
                 }
             }
         }
