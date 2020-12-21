@@ -105,7 +105,21 @@ namespace Axvr.Xamarin.Markdown.Templates
         /// <inheritdoc cref="List.GetBulletView(int)"/>
         protected override View GetBulletView(int position)
         {
-            return new Label { Text = $"{position + 1}." };
+            return new Label { Text = $"{position + 1}.", Style = BulletStyle };
+        }
+
+
+        public static readonly BindableProperty BulletStyleProperty =
+            BindableProperty.Create(
+                propertyName: nameof(BulletStyle),
+                returnType: typeof(Style),
+                declaringType: typeof(OrderedList),
+                defaultValue: new Style(typeof(Label)));
+
+        public Style BulletStyle
+        {
+            get => (Style)GetValue(BulletStyleProperty);
+            set => SetValue(BulletStyleProperty, value);
         }
     }
 
@@ -127,7 +141,21 @@ namespace Axvr.Xamarin.Markdown.Templates
         /// <inheritdoc cref="List.GetBulletView(int)"/>
         protected override View GetBulletView(int position)
         {
-            return new Label { Text = "•" };
+            return new Label { Text = "•", Style = BulletStyle };
+        }
+
+
+        public static readonly BindableProperty BulletStyleProperty =
+            BindableProperty.Create(
+                propertyName: nameof(BulletStyle),
+                returnType: typeof(Style),
+                declaringType: typeof(UnorderedList),
+                defaultValue: new Style(typeof(Label)));
+
+        public Style BulletStyle
+        {
+            get => (Style)GetValue(BulletStyleProperty);
+            set => SetValue(BulletStyleProperty, value);
         }
     }
 }
