@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<md:MdView xmlns="http://xamarin.com/schemas/2014/forms"
+           xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+           xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+           xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+           mc:Ignorable="d"
+           x:Class="Axvr.Xamarin.Markdown.Sample.Controls.MdView"
+           xmlns:md="clr-namespace:Axvr.Xamarin.Markdown;assembly=Axvr.Xamarin.Markdown"
+           xmlns:mdt="clr-namespace:Axvr.Xamarin.Markdown.Templates;assembly=Axvr.Xamarin.Markdown"
+           xmlns:controls="clr-namespace:Axvr.Xamarin.Markdown.Sample.Controls"
+           Padding="20" Spacing="10">
+
+    <md:MdView.Resources>
+        <ResourceDictionary>
+            <Style x:Key="Heading" TargetType="Label">
+                <Setter Property="HorizontalTextAlignment" Value="Center" />
+                <Setter Property="TextDecorations" Value="Underline" />
+                <Setter Property="TextColor" Value="{DynamicResource HeadingForeground}" />
+            </Style>
+        </ResourceDictionary>
+    </md:MdView.Resources>
+
+    <md:MdView.Heading1Template>
+        <DataTemplate>
+            <mdt:Heading1 Style="{StaticResource Heading}" />
+        </DataTemplate>
+    </md:MdView.Heading1Template>
+
+    <md:MdView.Heading2Template>
+        <DataTemplate>
+            <mdt:Heading2 Style="{StaticResource Heading}" />
+        </DataTemplate>
+    </md:MdView.Heading2Template>
+
+    <md:MdView.Heading3Template>
+        <DataTemplate>
+            <mdt:Heading3 Style="{StaticResource Heading}" />
+        </DataTemplate>
+    </md:MdView.Heading3Template>
+
+    <md:MdView.Heading4Template>
+        <DataTemplate>
+            <mdt:Heading4 Style="{StaticResource Heading}" />
+        </DataTemplate>
+    </md:MdView.Heading4Template>
+
+    <md:MdView.Heading5Template>
+        <DataTemplate>
+            <mdt:Heading5 Style="{StaticResource Heading}" />
+        </DataTemplate>
+    </md:MdView.Heading5Template>
+
+    <md:MdView.Heading6Template>
+        <DataTemplate>
+            <mdt:Heading6 Style="{StaticResource Heading}" />
+        </DataTemplate>
+    </md:MdView.Heading6Template>
+
+    <md:MdView.SeparatorTemplate>
+        <DataTemplate>
+            <mdt:Separator Color="{DynamicResource FadedForeground}" WidthRequest="90" HorizontalOptions="Center" Margin="0,12,0,10" />
+        </DataTemplate>
+    </md:MdView.SeparatorTemplate>
+
+    <md:MdView.ParagraphTemplate>
+        <DataTemplate>
+            <mdt:Paragraph TextColor="{DynamicResource Foreground}" />
+        </DataTemplate>
+    </md:MdView.ParagraphTemplate>
+
+    <md:MdView.SpanTemplate>
+        <DataTemplate>
+            <mdt:Span InlineCodeForegroundColor="{DynamicResource FadedForeground}" InlineCodeBackgroundColor="{DynamicResource FadedBackground}" LinkTextColor="{DynamicResource LinkForeground}" />
+        </DataTemplate>
+    </md:MdView.SpanTemplate>
+
+    <md:MdView.UnorderedListTemplate>
+        <DataTemplate>
+            <mdt:UnorderedList>
+                <mdt:UnorderedList.BulletStyle>
+                    <Style TargetType="Label">
+                        <Setter Property="TextColor" Value="{DynamicResource Accent}" />
+                    </Style>
+                </mdt:UnorderedList.BulletStyle>
+            </mdt:UnorderedList>
+        </DataTemplate>
+    </md:MdView.UnorderedListTemplate>
+
+    <md:MdView.OrderedListTemplate>
+        <DataTemplate>
+            <mdt:OrderedList>
+                <mdt:OrderedList.BulletStyle>
+                    <Style TargetType="Label">
+                        <Setter Property="TextColor" Value="{DynamicResource Accent}" />
+                    </Style>
+                </mdt:OrderedList.BulletStyle>
+            </mdt:OrderedList>
+        </DataTemplate>
+    </md:MdView.OrderedListTemplate>
+
+    <md:MdView.ImageTemplate>
+        <DataTemplate>
+            <controls:CaptionedImage>
+                <controls:CaptionedImage.CaptionStyle>
+                    <Style TargetType="Label">
+                        <Setter Property="FontAttributes" Value="Italic" />
+                        <Setter Property="TextColor" Value="{DynamicResource FadedForeground}" />
+                    </Style>
+                </controls:CaptionedImage.CaptionStyle>
+            </controls:CaptionedImage>
+        </DataTemplate>
+    </md:MdView.ImageTemplate>
+
+    <md:MdView.CodeBlockTemplate>
+        <DataTemplate>
+            <mdt:CodeBlock BackgroundColor="{DynamicResource FadedBackground}">
+                <mdt:CodeBlock.ContentStyle>
+                    <Style TargetType="Label">
+                        <Setter Property="TextColor" Value="{DynamicResource FadedForeground}" />
+                    </Style>
+                </mdt:CodeBlock.ContentStyle>
+            </mdt:CodeBlock>
+        </DataTemplate>
+    </md:MdView.CodeBlockTemplate>
+
+    <md:MdView.BlockQuoteTemplate>
+        <DataTemplate>
+            <mdt:BlockQuote BackgroundColor="{DynamicResource FadedBackground}" Padding="10" />
+        </DataTemplate>
+    </md:MdView.BlockQuoteTemplate>
+
+</md:MdView>

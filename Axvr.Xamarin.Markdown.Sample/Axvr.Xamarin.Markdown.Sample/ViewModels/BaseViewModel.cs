@@ -1,3 +1,4 @@
+﻿using Axvr.Xamarin.Markdown.Sample.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -7,6 +8,9 @@ namespace Axvr.Xamarin.Markdown.Sample.ViewModels
 {
     public class BaseViewModel : INotifyPropertyChanged
     {
+        public static Dictionary<string, MarkdownContent> ContentDictionary = new Dictionary<string, MarkdownContent>();
+
+
         private bool isBusy = false;
         public bool IsBusy
         {

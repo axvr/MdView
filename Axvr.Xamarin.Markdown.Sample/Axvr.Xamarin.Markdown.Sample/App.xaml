@@ -5,7 +5,68 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="Axvr.Xamarin.Markdown.Sample.App">
+
     <Application.Resources>
-        
+
+        <!-- Base -->
+        <Color x:Key="StatusBar" />
+        <Color x:Key="NavigationPrimary" />
+        <Color x:Key="NavigationForeground" />
+        <Color x:Key="NavigationUnselected" />
+        <Color x:Key="NavigationDisabled" />
+        <Color x:Key="Background" />
+        <Color x:Key="Foreground" />
+        <Color x:Key="FadedForeground" />
+        <Color x:Key="FadedBackground" />
+        <Color x:Key="HeadingForeground" />
+        <Color x:Key="Accent" />
+        <Color x:Key="LinkForeground" />
+
+
+        <!-- Default -->
+        <Color x:Key="StatusBar_Default">#1976D2</Color>
+        <Color x:Key="NavigationPrimary_Default">#2196F3</Color>
+        <Color x:Key="NavigationForeground_Default">#FFFFFF</Color>
+        <Color x:Key="NavigationUnselected_Default">#95FFFFFF</Color>
+        <Color x:Key="NavigationDisabled_Default">#B4FFFFFF</Color>
+        <Color x:Key="Background_Default">#FFFFFF</Color>
+        <Color x:Key="Foreground_Default">#303030</Color>
+        <Color x:Key="FadedForeground_Default">#999999</Color>
+        <Color x:Key="FadedBackground_Default">#EEEEEE</Color>
+        <Color x:Key="HeadingForeground_Default">#2196F3</Color>
+        <Color x:Key="Accent_Default">#2196F3</Color>
+        <Color x:Key="LinkForeground_Default">#2196F3</Color>
+
+
+        <!-- Light -->
+        <Color x:Key="StatusBar_Light">#F0F0F0</Color>
+        <Color x:Key="NavigationPrimary_Light">#FFFFFF</Color>
+        <Color x:Key="NavigationForeground_Light">#303030</Color>
+        <Color x:Key="NavigationUnselected_Light">#64000000</Color>
+        <Color x:Key="NavigationDisabled_Light">#B4000000</Color>
+        <Color x:Key="Background_Light">#F7F7F7</Color>
+        <Color x:Key="Foreground_Light">#303030</Color>
+        <Color x:Key="FadedForeground_Light">#999999</Color>
+        <Color x:Key="FadedBackground_Light">#EEEEEE</Color>
+        <Color x:Key="HeadingForeground_Light">#303030</Color>
+        <Color x:Key="Accent_Light">#2196F3</Color>
+        <Color x:Key="LinkForeground_Light">#2196F3</Color>
+
+
+        <!-- Dark -->
+        <Color x:Key="StatusBar_Dark">#3b3b3b</Color>
+        <Color x:Key="NavigationPrimary_Dark">#424242</Color>
+        <Color x:Key="NavigationForeground_Dark">#F0F0F0</Color>
+        <Color x:Key="NavigationUnselected_Dark">#818181</Color>
+        <Color x:Key="NavigationDisabled_Dark">#B4FFFFFF</Color>
+        <Color x:Key="Background_Dark">#303030</Color>
+        <Color x:Key="Foreground_Dark">#F0F0F0</Color>
+        <Color x:Key="FadedForeground_Dark">#CCCCCC</Color>
+        <Color x:Key="FadedBackground_Dark">#424242</Color>
+        <Color x:Key="HeadingForeground_Dark">#F0F0F0</Color>
+        <Color x:Key="Accent_Dark">#818181</Color>
+        <Color x:Key="LinkForeground_Dark">#78b2e2</Color>
+
     </Application.Resources>
+
 </Application>

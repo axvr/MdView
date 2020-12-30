@@ -1,20 +1,15 @@
-﻿using System;
+﻿using Axvr.Xamarin.Markdown.Sample.Helpers;
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
-using Axvr.Xamarin.Markdown.Sample.Services;
-using Axvr.Xamarin.Markdown.Sample.Views;
 
 namespace Axvr.Xamarin.Markdown.Sample
 {
     public partial class App : Application
     {
-
         public App()
         {
             InitializeComponent();
-
-            DependencyService.Register<MockDataStore>();
             MainPage = new AppShell();
+            ResourcesHelper.LoadTheme(Theme.Default);
         }
 
         protected override void OnStart()
