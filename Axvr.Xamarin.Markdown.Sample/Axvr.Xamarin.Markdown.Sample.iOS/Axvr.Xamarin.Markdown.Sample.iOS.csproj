@@ -138,4 +138,16 @@
       <Name>Axvr.Xamarin.Markdown.Sample</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\mdview_logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\mdview_logo_small_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\mdview_logo_small_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\mdview_logo_small_3.png" />
+  </ItemGroup>
 </Project>
