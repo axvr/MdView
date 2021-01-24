@@ -388,7 +388,8 @@ namespace Axvr.Xamarin.Markdown
             heading.BindingContext = new Templates.HeadingData
             {
                 Text = text.Unformatted,
-                FormattedText = text.Formatted
+                FormattedText = text.Formatted,
+                Level = block.Level
             };
 
             AttachLinks(heading);

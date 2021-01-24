@@ -24,6 +24,11 @@ namespace Axvr.Xamarin.Markdown.Templates
         /// Formatted heading text.
         /// </summary>
         public FormattedString FormattedText { get; set; }
+
+        /// <summary>
+        /// Heading level (1–6).
+        /// </summary>
+        public int Level { get; set; }
     }
 
 
