@@ -12,7 +12,7 @@
 
     <md:MdView.Resources>
         <ResourceDictionary>
-            <Style x:Key="Heading" TargetType="Label">
+            <Style x:Key="Heading" TargetType="mdt:Heading">
                 <Setter Property="HorizontalTextAlignment" Value="Center" />
                 <Setter Property="TextDecorations" Value="Underline" />
                 <Setter Property="TextColor" Value="{DynamicResource HeadingForeground}" />
