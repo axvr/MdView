@@ -1,33 +1,32 @@
-# MdView *for Xamarin.Forms*
+# MdView for Xamarin.Forms
 
 *The flexible Markdown control for Xamarin.Forms.*
 
 [![MdView CI](https://github.com/axvr/MdView/workflows/MdView%20CI/badge.svg)](https://github.com/axvr/MdView/actions?query=workflow%3A%22MdView+CI%22)
 
-*Note: this package is still pre-alpha. Please wait for `v1.0` before using it.*
+***Note: this package is still actively changing and not yet on Nuget.org. Please wait for v1.0 before using it.***
 
-## Gallery
 
-![Light theme](Documentation/Screenshot.png)
+MdView is a highly customisable framework for rendering Markdown as native Xamarin.Forms components.
 
-## Introduction
+MdView's default controls are designed to be easily replaced with your own custom ones, to better match the design of your app and add additional functionality.
 
-Compared to a majority of solutions, MarkdownView will render every component as **a native Xamarin.Forms view instead of via an HTML backend.** The Markdown is directly translated from a syntax tree to a hierarchy of Xamarin.Forms views; no HTML is being produced at all (hurray)!
+| Default Xamarin Theme | Dark Google Material Theme | Dynamic Editing of Markdown |
+|---|---|---|
+| ![][default] | ![][dark] | ![][edit] |
 
-This will produce a more reactive user interface, at the cost of rendering functionalities *(at the moment though!)*.
+[default]: https://raw.githubusercontent.com/NumerousTechnology/MdView/4ecbaca9de0af53c6bca8fa81f4274077592e16e/MdView_Sample_Default.png
+[dark]: https://github.com/NumerousTechnology/MdView/raw/4ecbaca9de0af53c6bca8fa81f4274077592e16e/MdView_Sample_Dark.gif
+[edit]: https://github.com/NumerousTechnology/MdView/raw/4ecbaca9de0af53c6bca8fa81f4274077592e16e/MdView_Sample_Edit.gif
 
-## Limitations
+These examples come from the MdView sample app (found within this repository) which you are encouraged to try out and copy source code from.
 
-Unfortunately, Xamarin.Forms string rendering has some limitations...
-
-- **Inlined images aren't supported** (*Xamarin.Forms formatted strings doesn't support inlined views*) : They will be displayed after the block they are referenced from.
-- **Links are only clickable at a leaf block level**  (*Xamarin.Forms formatted strings doesn't support span user interactions*) : if a leaf block contains more than one link, the user is prompted. This is almost a feature since text may be too small to be enough precise! ;)
 
 ## Contributions
 
 Contributions are welcome! If you find a bug please report it and if you want a feature please report it or submit a pull request.
 
-## Thanks
+### Built with
 
 - [MarkdownView](https://github.com/dotnet-ad/MarkdownView) — from which this package was forked.
 - [Markdig](https://github.com/lunet-io/markdig) —  used for Markdown parsing.
