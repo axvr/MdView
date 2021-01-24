@@ -78,7 +78,7 @@ Images can either be stored locally in the app or fetched remotely.
 
 ## Block quotes
 
-> Most software today is very much like an Egyption pyramid with millions of bricks piled on top of each other, with no structural integrity, but just done by brute force and thousands of slaves.
+> **Most creativity is a transition from one context into another where things are more surprising.**  There’s an element of surprise, and especially in science, there is often laughter that goes along with the “Aha.”  Art also has this element.  **Our job is to remind us that there are more contexts than the one that we’re in — the one that we think is reality.**
 >
 > — [Alan Kay](https://queue.acm.org/detail.cfm?id=1039523) (2004)
 
