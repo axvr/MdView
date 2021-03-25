@@ -33,13 +33,13 @@ jobs:
 
     - name: Restore
       run: |
-        cd Axvr.Xamarin.Markdown.Sample/
-        msbuild /t:restore Axvr.Xamarin.Markdown.Sample.Android/Axvr.Xamarin.Markdown.Sample.Android.csproj
+        cd MdView.Sample/
+        msbuild /t:restore MdView.Sample.Android/MdView.Sample.Android.csproj
 
     - name: Build
       run: |
-        cd Axvr.Xamarin.Markdown.Sample/
-        msbuild Axvr.Xamarin.Markdown.Sample.Android/Axvr.Xamarin.Markdown.Sample.Android.csproj /verbosity:normal /t:Rebuild /p:Configuration=Release
+        cd MdView.Sample/
+        msbuild MdView.Sample.Android/MdView.Sample.Android.csproj /verbosity:normal /t:Rebuild /p:Configuration=Release
 
   ios_sample:
     name: iOS sample app
@@ -55,10 +55,10 @@ jobs:
 
     - name: Restore
       run: |
-        cd Axvr.Xamarin.Markdown.Sample/
-        msbuild /t:restore Axvr.Xamarin.Markdown.Sample.iOS/Axvr.Xamarin.Markdown.Sample.iOS.csproj
+        cd MdView.Sample/
+        msbuild /t:restore MdView.Sample.iOS/MdView.Sample.iOS.csproj
 
     - name: Build
       run: |
-        cd Axvr.Xamarin.Markdown.Sample/
-        msbuild Axvr.Xamarin.Markdown.Sample.iOS/Axvr.Xamarin.Markdown.Sample.iOS.csproj /verbosity:normal /t:Rebuild /p:Platform=iPhoneSimulator /p:Configuration=Release
+        cd MdView.Sample/
+        msbuild MdView.Sample.iOS/MdView.Sample.iOS.csproj /verbosity:normal /t:Rebuild /p:Platform=iPhoneSimulator /p:Configuration=Release

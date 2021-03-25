@@ -25,7 +25,7 @@ The MdView library and source code is available under the terms of the Expat
 This includes these files and the contents of these directories:
 
   * MdView.sln
-  * Axvr.Xamarin.Markdown/
+  * MdView/
 
 More info on the Expat licence: <https://directory.fsf.org/wiki/License:MIT>
 
@@ -44,7 +44,7 @@ This includes these files and the contents of these directories with the
 exception of media assets:
 
   * MdView.Sample.sln
-  * Axvr.Xamarin.Markdown.Sample/
+  * MdView.Sample/
   * README.md
   * LICENCE
 

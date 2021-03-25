@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26124.0
 MinimumVisualStudioVersion = 15.0.26124.0
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Axvr.Xamarin.Markdown", "Axvr.Xamarin.Markdown\Axvr.Xamarin.Markdown.csproj", "{E73E20F2-E798-4D07-B6B8-0B5CD9A34E5F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MdView", "MdView\MdView.csproj", "{E73E20F2-E798-4D07-B6B8-0B5CD9A34E5F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
