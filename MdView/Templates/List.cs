@@ -109,6 +109,7 @@ namespace MdView.Templates
         }
 
 
+        /// <inheritdoc cref="BulletStyle"/>
         public static readonly BindableProperty BulletStyleProperty =
             BindableProperty.Create(
                 propertyName: nameof(BulletStyle),
@@ -116,6 +117,13 @@ namespace MdView.Templates
                 declaringType: typeof(OrderedList),
                 defaultValue: new Style(typeof(Label)));
 
+        /// <summary>
+        /// Set style of list bullet.
+        /// </summary>
+        ///
+        /// <remarks>
+        /// A list bullet is a <see cref="Label"/>.
+        /// </remarks>
         public Style BulletStyle
         {
             get => (Style)GetValue(BulletStyleProperty);
@@ -145,6 +153,7 @@ namespace MdView.Templates
         }
 
 
+        /// <inheritdoc cref="BulletStyle"/>
         public static readonly BindableProperty BulletStyleProperty =
             BindableProperty.Create(
                 propertyName: nameof(BulletStyle),
@@ -152,6 +161,7 @@ namespace MdView.Templates
                 declaringType: typeof(UnorderedList),
                 defaultValue: new Style(typeof(Label)));
 
+        /// <inheritdoc cref="OrderedList.BulletStyle"/>
         public Style BulletStyle
         {
             get => (Style)GetValue(BulletStyleProperty);

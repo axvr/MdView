@@ -70,6 +70,7 @@ namespace MdView.Templates
         private readonly BoxView _separator = new BoxView { WidthRequest = 4, Color = Color.FromHex("#eaecef") };
 
 
+        /// <inheritdoc cref="SeparatorStyle"/>
         public static readonly BindableProperty SeparatorStyleProperty =
             BindableProperty.Create(
                 propertyName: nameof(SeparatorStyle),
@@ -78,6 +79,13 @@ namespace MdView.Templates
                 defaultValue: new Style(typeof(BoxView)),
                 propertyChanged: OnSeparatorStyleChanged);
 
+        /// <summary>
+        /// Set style of the block quote left separator.
+        /// </summary>
+        ///
+        /// <remarks>
+        /// Block quote separator is a <see cref="BoxView"/>.
+        /// </remarks>
         public Style SeparatorStyle
         {
             get => (Style)GetValue(SeparatorStyleProperty);
@@ -96,6 +104,7 @@ namespace MdView.Templates
         private readonly StackLayout _content = new StackLayout { Orientation = StackOrientation.Horizontal };
 
 
+        /// <inheritdoc cref="ContentStyle"/>
         public static readonly BindableProperty ContentStyleProperty =
             BindableProperty.Create(
                 propertyName: nameof(ContentStyle),
@@ -104,6 +113,13 @@ namespace MdView.Templates
                 defaultValue: new Style(typeof(StackLayout)),
                 propertyChanged: OnContentStyleChanged);
 
+        /// <summary>
+        /// Set style of block quote content.
+        /// </summary>
+        ///
+        /// <remarks>
+        /// Block quote content is a <see cref="StackLayout"/>.
+        /// </remarks>
         public Style ContentStyle
         {
             get => (Style)GetValue(ContentStyleProperty);

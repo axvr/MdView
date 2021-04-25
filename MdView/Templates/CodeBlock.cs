@@ -67,6 +67,7 @@ namespace MdView.Templates
         private readonly Label _content = new Label();
 
 
+        /// <inheritdoc cref="ContentStyle"/>
         public static readonly BindableProperty ContentStyleProperty =
             BindableProperty.Create(
                 propertyName: nameof(ContentStyle),
@@ -75,6 +76,13 @@ namespace MdView.Templates
                 defaultValue: new Style(typeof(Label)),
                 propertyChanged: OnContentStyleChanged);
 
+        /// <summary>
+        /// Set style of code block textual content.
+        /// </summary>
+        ///
+        /// <remarks>
+        /// Code block content is a <see cref="Label"/>.
+        /// </remarks>
         public Style ContentStyle
         {
             get => (Style)GetValue(ContentStyleProperty);

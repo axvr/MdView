@@ -58,6 +58,7 @@ namespace MdView.Templates
         }
 
 
+        /// <inheritdoc cref="Span.OnBindingContextChanged"/>
         protected override void OnBindingContextChanged()
         {
             base.OnBindingContextChanged();
@@ -76,6 +77,7 @@ namespace MdView.Templates
 
         #region InlineCode
 
+        /// <inheritdoc cref="InlineCodeForegroundColor"/>
         public static readonly BindableProperty InlineCodeForegroundColorProperty =
             BindableProperty.Create(
                 propertyName: nameof(InlineCodeForegroundColor),
@@ -91,6 +93,7 @@ namespace MdView.Templates
         }
 
 
+        /// <inheritdoc cref="InlineCodeBackgroundColor"/>
         public static readonly BindableProperty InlineCodeBackgroundColorProperty =
             BindableProperty.Create(
                 propertyName: nameof(InlineCodeBackgroundColor),
@@ -106,6 +109,7 @@ namespace MdView.Templates
         }
 
 
+        /// <inheritdoc cref="InlineCodeFontFamily"/>
         public static readonly BindableProperty InlineCodeFontFamilyProperty =
             BindableProperty.Create(
                 propertyName: nameof(InlineCodeFontFamily),
@@ -125,6 +129,7 @@ namespace MdView.Templates
 
         #region Link
 
+        /// <inheritdoc cref="LinkTextColor"/>
         public static readonly BindableProperty LinkTextColorProperty =
             BindableProperty.Create(
                 propertyName: nameof(LinkTextColor),
