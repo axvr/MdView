@@ -10,23 +10,40 @@ using System.Text;
 
 namespace MdView
 {
+    /// <summary>
+    /// Markdown renderer.
+    /// </summary>
     public class MdView : StackLayout
     {
+        /// <summary>
+        /// Default constructor to instantiate a new instance of the MdView Markdown render.
+        /// </summary>
         public MdView() : base()
         {
             Spacing = 10;
         }
 
 
+        /// <summary>
+        /// Link handler.
+        /// </summary>
+        ///
+        /// <remarks>
+        /// Invoked whenever a Markdown link is clicked.
+        /// </remarks>
         public Action<string> NavigateToLink { get; set; } = (s) => Launcher.TryOpenAsync(s);
 
 
+        /// <summary>
+        /// The Markdown string that will be rendered by MdView.
+        /// </summary>
         public string Markdown
         {
             get => (string)GetValue(MarkdownProperty);
             set => SetValue(MarkdownProperty, value);
         }
 
+        /// <inheritdoc cref="Markdown"/>
         public static readonly BindableProperty MarkdownProperty =
             BindableProperty.Create(
                 propertyName: nameof(Markdown),
@@ -87,9 +104,10 @@ namespace MdView
             if (links.Any())
             {
                 var blockLinks = links;
+                // TODO: extract this out to be controlled by NavigateToLink.
                 view.GestureRecognizers.Add(new TapGestureRecognizer
                 {
-                    Command = new Command(async () => 
+                    Command = new Command(async () =>
                     {
                         try
                         {
@@ -126,142 +144,361 @@ namespace MdView
         }
 
 
+        /// <summary>
+        /// <see cref="DataTemplate"/> representing a Markdown heading of level 1.
+        /// </summary>
+        ///
+        /// <remarks>
+        /// Data required by the DataTemplate comes from a <see cref="Templates.HeadingData"/>
+        /// object set as the <c>BindingContext</c>.
+        /// </remarks>
+        ///
+        /// <example>
+        /// <code>
+        /// # Heading 1
+        /// </code>
+        /// </example>
         public DataTemplate Heading1Template
         {
             get => (DataTemplate)GetValue(Heading1TemplateProperty);
             set => SetValue(Heading1TemplateProperty, value);
         }
 
+        /// <inheritdoc cref="Heading1Template"/>
         public static readonly BindableProperty Heading1TemplateProperty =
             CreateTemplateProperty(nameof(Heading1Template), typeof(Templates.Heading1));
 
 
+        /// <summary>
+        /// <see cref="DataTemplate"/> representing a Markdown heading of level 2.
+        /// </summary>
+        ///
+        /// <remarks>
+        /// Data required by the DataTemplate comes from a <see cref="Templates.HeadingData"/>
+        /// object set as the <c>BindingContext</c>.
+        /// </remarks>
+        ///
+        /// <example>
+        /// <code>
+        /// ## Heading 2
+        /// </code>
+        /// </example>
         public DataTemplate Heading2Template
         {
             get => (DataTemplate)GetValue(Heading2TemplateProperty);
             set => SetValue(Heading2TemplateProperty, value);
         }
 
+        /// <inheritdoc cref="Heading2Template"/>
         public static readonly BindableProperty Heading2TemplateProperty =
             CreateTemplateProperty(nameof(Heading2Template), typeof(Templates.Heading2));
 
 
+        /// <summary>
+        /// <see cref="DataTemplate"/> representing a Markdown heading of level 3.
+        /// </summary>
+        ///
+        /// <remarks>
+        /// Data required by the DataTemplate comes from a <see cref="Templates.HeadingData"/>
+        /// object set as the <c>BindingContext</c>.
+        /// </remarks>
+        ///
+        /// <example>
+        /// <code>
+        /// ### Heading 3
+        /// </code>
+        /// </example>
         public DataTemplate Heading3Template
         {
             get => (DataTemplate)GetValue(Heading3TemplateProperty);
             set => SetValue(Heading3TemplateProperty, value);
         }
 
+        /// <inheritdoc cref="Heading3Template"/>
         public static readonly BindableProperty Heading3TemplateProperty =
             CreateTemplateProperty(nameof(Heading3Template), typeof(Templates.Heading3));
 
 
+        /// <summary>
+        /// <see cref="DataTemplate"/> representing a Markdown heading of level 4.
+        /// </summary>
+        ///
+        /// <remarks>
+        /// Data required by the DataTemplate comes from a <see cref="Templates.HeadingData"/>
+        /// object set as the <c>BindingContext</c>.
+        /// </remarks>
+        ///
+        /// <example>
+        /// <code>
+        /// #### Heading 4
+        /// </code>
+        /// </example>
         public DataTemplate Heading4Template
         {
             get => (DataTemplate)GetValue(Heading4TemplateProperty);
             set => SetValue(Heading4TemplateProperty, value);
         }
 
+        /// <inheritdoc cref="Heading4Template"/>
         public static readonly BindableProperty Heading4TemplateProperty =
             CreateTemplateProperty(nameof(Heading4Template), typeof(Templates.Heading4));
 
 
+        /// <summary>
+        /// <see cref="DataTemplate"/> representing a Markdown heading of level 5.
+        /// </summary>
+        ///
+        /// <remarks>
+        /// Data required by the DataTemplate comes from a <see cref="Templates.HeadingData"/>
+        /// object set as the <c>BindingContext</c>.
+        /// </remarks>
+        ///
+        /// <example>
+        /// <code>
+        /// ##### Heading 5
+        /// </code>
+        /// </example>
         public DataTemplate Heading5Template
         {
             get => (DataTemplate)GetValue(Heading5TemplateProperty);
             set => SetValue(Heading5TemplateProperty, value);
         }
 
+        /// <inheritdoc cref="Heading5Template"/>
         public static readonly BindableProperty Heading5TemplateProperty =
             CreateTemplateProperty(nameof(Heading5Template), typeof(Templates.Heading5));
 
 
+        /// <summary>
+        /// <see cref="DataTemplate"/> representing a Markdown heading of level 6.
+        /// </summary>
+        ///
+        /// <remarks>
+        /// Data required by the DataTemplate comes from a <see cref="Templates.HeadingData"/>
+        /// object set as the <c>BindingContext</c>.
+        /// </remarks>
+        ///
+        /// <example>
+        /// <code>
+        /// ###### Heading 6
+        /// </code>
+        /// </example>
         public DataTemplate Heading6Template
         {
             get => (DataTemplate)GetValue(Heading6TemplateProperty);
             set => SetValue(Heading6TemplateProperty, value);
         }
 
+        /// <inheritdoc cref="Heading6Template"/>
         public static readonly BindableProperty Heading6TemplateProperty =
             CreateTemplateProperty(nameof(Heading6Template), typeof(Templates.Heading6));
 
-
+        /// <summary>
+        /// <see cref="DataTemplate"/> representing a Markdown separator.
+        /// </summary>
+        ///
+        /// <example>
+        /// ---
+        /// </example>
         public DataTemplate SeparatorTemplate
         {
             get => (DataTemplate)GetValue(SeparatorTemplateProperty);
             set => SetValue(SeparatorTemplateProperty, value);
         }
 
+        /// <inheritdoc cref="SeparatorTemplate"/>
         public static readonly BindableProperty SeparatorTemplateProperty =
             CreateTemplateProperty(nameof(SeparatorTemplate), typeof(Templates.Separator));
 
 
+        /// <summary>
+        /// <see cref="DataTemplate"/> representing a Markdown paragraph.
+        /// </summary>
+        ///
+        /// <remarks>
+        /// Data required by the DataTemplate comes from a <see cref="Templates.ParagraphData"/>
+        /// object set as the <c>BindingContext</c>.
+        ///
+        /// The styling of internal attributes such as bold and italic text is performed in the
+        /// <see cref="SpanTemplate"/>.
+        /// </remarks>
+        ///
+        /// <example>
+        /// <code>
+        /// Hello world.
+        /// </code>
+        /// </example>
         public DataTemplate ParagraphTemplate
         {
             get => (DataTemplate)GetValue(ParagraphTemplateProperty);
             set => SetValue(ParagraphTemplateProperty, value);
         }
 
+        /// <inheritdoc cref="ParagraphTemplate"/>
         public static readonly BindableProperty ParagraphTemplateProperty =
             CreateTemplateProperty(nameof(ParagraphTemplate), typeof(Templates.Paragraph));
 
 
+        /// <summary>
+        /// <see cref="DataTemplate"/> representing a Markdown multiline code block.
+        /// </summary>
+        ///
+        /// <remarks>
+        /// Data required by the DataTemplate comes from a <see cref="Templates.CodeBlockData"/>
+        /// object set as the <c>BindingContext</c>.
+        /// </remarks>
+        ///
+        /// <example>
+        /// <code>
+        /// ```
+        /// public string Hello(string name)
+        /// {
+        ///     return $"Hello {name}!";
+        /// }
+        /// ```
+        /// </code>
+        /// </example>
         public DataTemplate CodeBlockTemplate
         {
             get => (DataTemplate)GetValue(CodeBlockTemplateProperty);
             set => SetValue(CodeBlockTemplateProperty, value);
         }
 
+        /// <inheritdoc cref="CodeBlockTemplate"/>
         public static readonly BindableProperty CodeBlockTemplateProperty =
             CreateTemplateProperty(nameof(CodeBlockTemplate), typeof(Templates.CodeBlock));
 
 
+        /// <summary>
+        /// <see cref="DataTemplate"/> representing a Markdown multiline block quote.
+        /// </summary>
+        ///
+        /// <remarks>
+        /// Data required by the DataTemplate comes from a <see cref="Templates.BlockQuoteData"/>
+        /// object set as the <c>BindingContext</c>.
+        /// </remarks>
+        ///
+        /// <example>
+        /// <code>
+        /// > This is a multiline block quote.
+        /// >
+        /// > They are very cool
+        /// >
+        /// > — Albert Einstein.
+        /// </code>
+        /// </example>
         public DataTemplate BlockQuoteTemplate
         {
             get => (DataTemplate)GetValue(BlockQuoteTemplateProperty);
             set => SetValue(BlockQuoteTemplateProperty, value);
         }
 
+        /// <inheritdoc cref="BlockQuoteTemplate"/>
         public static readonly BindableProperty BlockQuoteTemplateProperty =
             CreateTemplateProperty(nameof(BlockQuoteTemplate), typeof(Templates.BlockQuote));
 
 
+        /// <summary>
+        /// <see cref="DataTemplate"/> representing a Markdown ordered list.
+        /// </summary>
+        ///
+        /// <remarks>
+        /// Data required by the DataTemplate comes from a <see cref="Templates.ListData"/>
+        /// object set as the <c>BindingContext</c>.
+        /// </remarks>
+        ///
+        /// <example>
+        /// <code>
+        /// 1. Hello world,
+        /// 2. Foo,
+        /// 3. Bar.
+        /// </code>
+        /// </example>
         public DataTemplate OrderedListTemplate
         {
             get => (DataTemplate)GetValue(OrderedListTemplateProperty);
             set => SetValue(OrderedListTemplateProperty, value);
         }
 
+        /// <inheritdoc cref="OrderedListTemplate"/>
         public static readonly BindableProperty OrderedListTemplateProperty =
             CreateTemplateProperty(nameof(OrderedListTemplate), typeof(Templates.OrderedList));
 
 
+        /// <summary>
+        /// <see cref="DataTemplate"/> representing a Markdown unordered list.
+        /// </summary>
+        ///
+        /// <remarks>
+        /// Data required by the DataTemplate comes from a <see cref="Templates.ListData"/>
+        /// object set as the <c>BindingContext</c>.
+        /// </remarks>
+        ///
+        /// <example>
+        /// <code>
+        /// * Hello world,
+        /// - Foo,
+        /// + Bar.
+        /// </code>
+        /// </example>
         public DataTemplate UnorderedListTemplate
         {
             get => (DataTemplate)GetValue(UnorderedListTemplateProperty);
             set => SetValue(UnorderedListTemplateProperty, value);
         }
 
+        /// <inheritdoc cref="UnorderedListTemplate"/>
         public static readonly BindableProperty UnorderedListTemplateProperty =
             CreateTemplateProperty(nameof(UnorderedListTemplate), typeof(Templates.UnorderedList));
 
 
+        /// <summary>
+        /// <see cref="DataTemplate"/> representing a Markdown image.
+        /// </summary>
+        ///
+        /// <remarks>
+        /// Data required by the DataTemplate comes from a <see cref="Templates.ImageData"/>
+        /// object set as the <c>BindingContext</c>.
+        /// </remarks>
+        ///
+        /// <example>
+        /// <code>
+        /// ![](https://unsplash.it/200/300 "This is the image title")
+        /// </code>
+        /// </example>
         public DataTemplate ImageTemplate
         {
             get => (DataTemplate)GetValue(ImageTemplateProperty);
             set => SetValue(ImageTemplateProperty, value);
         }
 
+        /// <inheritdoc cref="ImageTemplate"/>
         public static readonly BindableProperty ImageTemplateProperty =
             CreateTemplateProperty(nameof(ImageTemplate), typeof(Templates.Image));
 
 
+        /// <summary>
+        /// <see cref="DataTemplate"/> representing an inline element (bold, italic, link, code)
+        /// embedded within another textual template such as a paragraph, heading or block quote.
+        /// </summary>
+        ///
+        /// <remarks>
+        /// Data required by the DataTemplate comes from a <see cref="Templates.SpanData"/>
+        /// object set as the <c>BindingContext</c>.
+        /// </remarks>
+        ///
+        /// <example>
+        /// <code>
+        /// **Bold**, _italic_, [Link](https://example.com), `code`.
+        /// </code>
+        /// </example>
         public DataTemplate SpanTemplate
         {
             get => (DataTemplate)GetValue(SpanTemplateProperty);
             set => SetValue(SpanTemplateProperty, value);
         }
 
+        /// <inheritdoc cref="SpanTemplate"/>
         public static readonly BindableProperty SpanTemplateProperty =
             CreateTemplateProperty(nameof(SpanTemplate), typeof(Templates.Span));
 
