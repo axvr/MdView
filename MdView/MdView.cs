@@ -25,13 +25,13 @@ namespace MdView
 
 
         /// <summary>
-        /// Link handler.
+        /// Link handler invoked whenever a Markdown link is clicked.
         /// </summary>
         ///
         /// <remarks>
-        /// Invoked whenever a Markdown link is clicked.
+        /// Is passed a <see cref="LinkData"/> object on invokation.
         /// </remarks>
-        public Action<string> NavigateToLink { get; set; } = (s) => Launcher.TryOpenAsync(s);
+        public Action<LinkData> LinkHandler { get; set; } = x => Launcher.TryOpenAsync(x.Url);
 
 
         /// <summary>
@@ -93,41 +93,6 @@ namespace MdView
             }
 
             return views;
-        }
-
-
-        private List<KeyValuePair<string, string>> links = new List<KeyValuePair<string, string>>();
-
-
-        private void AttachLinks(View view)
-        {
-            if (links.Any())
-            {
-                var blockLinks = links;
-                // TODO: extract this out to be controlled by NavigateToLink.
-                view.GestureRecognizers.Add(new TapGestureRecognizer
-                {
-                    Command = new Command(async () =>
-                    {
-                        try
-                        {
-                            if (blockLinks.Count > 1)
-                            {
-                                var result = await Application.Current.MainPage.DisplayActionSheet("Open link", "Cancel", null, blockLinks.Select(x => x.Key).ToArray());
-                                var link = blockLinks.FirstOrDefault(x => x.Key == result);
-                                NavigateToLink(link.Value);
-                            }
-                            else
-                            {
-                                NavigateToLink(blockLinks.First().Value);
-                            }
-                        }
-                        catch (Exception) { }
-                    }),
-                });
-
-                links = new List<KeyValuePair<string, string>>();
-            }
         }
 
 
@@ -629,8 +594,6 @@ namespace MdView
                 Level = block.Level
             };
 
-            AttachLinks(heading);
-
             return heading;
         }
 
@@ -646,8 +609,6 @@ namespace MdView
                 Text = text.Unformatted,
                 FormattedText = text.Formatted
             };
-
-            AttachLinks(paragraph);
 
             return paragraph;
         }
@@ -759,11 +720,24 @@ namespace MdView
 
                 case LinkInline link:
                     childAttributes = attributes | Templates.SpanAttributes.Link;
+
                     var spans = link.SelectMany(x => CreateSpans(x, childAttributes)).ToArray();
-                    var linkTitle = string.IsNullOrEmpty(link.Title)
-                                  ? string.Join("", spans.Select(x => x.Text))
-                                  : link.Title;
-                    links.Add(new KeyValuePair<string, string>(linkTitle, link.Url));
+
+                    var linkText = string.Join("", spans.Select(x => x.Text));
+                    var gestureRecogniser = new TapGestureRecognizer
+                    {
+                        Command = new Command(() =>
+                        {
+                            try { LinkHandler(new LinkData(link, linkText)); }
+                            catch (Exception) { }
+                        }),
+                    };
+
+                    foreach (var span in spans)
+                    {
+                        span.GestureRecognizers.Add(gestureRecogniser);
+                    }
+
                     return spans;
 
                 case CodeInline code:

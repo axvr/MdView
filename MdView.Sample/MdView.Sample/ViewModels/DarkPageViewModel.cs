@@ -44,11 +44,7 @@ The Markdown variant used by MdView is [CommonMark](https://commonmark.org/ ""Co
 
 ## Inline text
 
-As expected **bold**, _italic_ and **_bold italic_** text will all work, as well as `inline code`.
-
-Inline links work too, although due to limitations in [Xamarin](https://dotnet.microsoft.com/apps/xamarin) clicking anywhere in the paragraph containing the link will open it.
-
-If a paragraph contains 2 or more links, MdView will open an ""[Action Sheet](https://developer.apple.com/design/human-interface-guidelines/ios/views/action-sheets/ ""Action Sheets [Apple Human Interface Guidelines]"")"" listing the link options.  The text displayed in the Action Sheet will be the [_link title_](https://daringfireball.net/projects/markdown/syntax#link).  If no link title was provided, MdView will use the _link text_.
+As expected **bold**, _italic_ and **_bold italic_** text will all work, as well as `inline code` and [links](https://daringfireball.net/projects/markdown/syntax#link).
 
 
 ## Ordered and unordered lists
