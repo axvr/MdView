@@ -34,7 +34,7 @@ Contributions are welcome! If you find a bug please report it and if you want a 
 
 ## Legal
 
-- Copyright © 2020, [Numerous Technology](https://numerous.app).
+- Copyright © 2021, [Numerous Technology](https://numerous.app).
 - Copyright © 2020, [Alex Vear](https://axvr.io).
 - Copyright © 2017, [Aloïs Deniel](http://aloisdeniel.github.io).
 
