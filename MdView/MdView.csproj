@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <PropertyGroup>
-    <Version>0.6.0</Version>
+    <Version>0.7.0</Version>
     <Authors>Numerous Technology;Alex Vear</Authors>
     <PackageId>MdView</PackageId>
     <PackageIcon>icon.png</PackageIcon>
