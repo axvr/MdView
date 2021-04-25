@@ -1,11 +1,6 @@
 # MdView for Xamarin.Forms
 
-*The flexible Markdown control for Xamarin.Forms.*
-
-[![MdView CI](https://github.com/axvr/MdView/workflows/MdView%20CI/badge.svg)](https://github.com/axvr/MdView/actions?query=workflow%3A%22MdView+CI%22)
-
-***Note: this package is still actively changing and not yet on Nuget.org. Please wait for v1.0 before using it.***
-
+### *The flexible Markdown control for Xamarin.Forms.*
 
 MdView is a highly customisable framework for rendering Markdown as native Xamarin.Forms components.
 
@@ -22,6 +17,31 @@ MdView's default controls are designed to be easily replaced with your own custo
 These examples come from the MdView sample app (found within this repository) which you are encouraged to try out and copy source code from.
 
 
+## Usage
+
+*Note: MdView is currently in beta and backwards incompatible changes may happen.  Any backwards incompatible changes will be mentioned in the [release notes](https://github.com/NumerousTechnology/MdView/releases).*
+
+
+### Getting started
+
+Install the [MdView package from NuGet.org](https://www.nuget.org/packages/MdView) in the shared project of your app.  Once installed add the namespace to your XAML file and start using `MdView`.
+
+```xaml
+<ContentPage ...
+             xmlns:md="clr-namespace:MdView;assembly=MdView"
+             ...>
+    <ScrollView>
+        <md:MdView Markdown="Hello **world**!" />
+    </ScrollView>
+</ContentPage>
+```
+
+
+### Customise
+
+_WIP._
+
+
 ## Contributions
 
 Contributions are welcome! If you find a bug please report it and if you want a feature please report it or submit a pull request.
@@ -35,7 +55,7 @@ Contributions are welcome! If you find a bug please report it and if you want a 
 ## Legal
 
 - Copyright © 2021, [Numerous Technology](https://numerous.app).
-- Copyright © 2020, [Alex Vear](https://axvr.io).
+- Copyright © 2020, [Alex Vear](https://alexvear.com).
 - Copyright © 2017, [Aloïs Deniel](http://aloisdeniel.github.io).
 
 The MdView library and source code is available under the terms of the [_Expat_
@@ -48,4 +68,4 @@ accompanying [`LICENCE`][Licence] file.
 [CC0]: https://creativecommons.org/publicdomain/zero/1.0/
 [CC]:  https://creativecommons.org/licenses/by-sa/4.0/
 [MIT]: https://directory.fsf.org/wiki/License:MIT
-[Licence]: https://github.com/axvr/MdView/blob/master/LICENCE
+[Licence]: https://github.com/NumerousTechnology/MdView/blob/master/LICENCE

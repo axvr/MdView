@@ -5,8 +5,8 @@
   </PropertyGroup>
 
   <PropertyGroup>
-    <Version>0.5.0</Version>
-    <Authors>Alex Vear</Authors>
+    <Version>0.6.0</Version>
+    <Authors>Numerous Technology;Alex Vear</Authors>
     <PackageId>MdView</PackageId>
     <PackageIcon>icon.png</PackageIcon>
     <PackageIconUrl>https://raw.githubusercontent.com/NumerousTechnology/MdView/assets/mdview-logo-250x250.png</PackageIconUrl>
@@ -19,7 +19,7 @@
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageTags>Xamarin;iOS;Android;md;Markdown</PackageTags>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
-    <Company>Numerous</Company>
+    <Company>Numerous Technology</Company>
   </PropertyGroup>
 
   <ItemGroup>
