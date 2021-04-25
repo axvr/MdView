@@ -10,9 +10,9 @@ MdView's default controls are designed to be easily replaced with your own custo
 |---|---|---|
 | ![][default] | ![][dark] | ![][edit] |
 
-[default]: https://raw.githubusercontent.com/NumerousTechnology/MdView/4ecbaca9de0af53c6bca8fa81f4274077592e16e/MdView_Sample_Default.png
-[dark]: https://github.com/NumerousTechnology/MdView/raw/4ecbaca9de0af53c6bca8fa81f4274077592e16e/MdView_Sample_Dark.gif
-[edit]: https://github.com/NumerousTechnology/MdView/raw/4ecbaca9de0af53c6bca8fa81f4274077592e16e/MdView_Sample_Edit.gif
+[default]: https://raw.githubusercontent.com/NumerousTechnology/MdView/fea2f790808a16189080bacfeb4909985cd558a1/MdView_Sample_Default.png
+[dark]: https://github.com/NumerousTechnology/MdView/raw/fea2f790808a16189080bacfeb4909985cd558a1/MdView_Sample_Dark.gif
+[edit]: https://github.com/NumerousTechnology/MdView/raw/fea2f790808a16189080bacfeb4909985cd558a1/MdView_Sample_Edit.gif
 
 These examples come from the MdView sample app (found within this repository) which you are encouraged to try out and copy source code from.
 
