@@ -12,7 +12,7 @@
     <PackageIconUrl>https://raw.githubusercontent.com/NumerousTechnology/MdView/assets/mdview-logo-250x250.png</PackageIconUrl>
     <Title>MdView for Xamarin.Forms</Title>
     <Summary>The flexible Markdown control for Xamarin.Forms.</Summary>
-    <Description>A highly customisable Markdown control for Xamarin.Forms.</Description>
+    <Description>MdView is a highly customisable Markdown control for Xamarin.Forms.  With MdView you can render Markdown such that it perfectly matches the design and behaviour of your app.</Description>
     <Copyright>Copyright © 2021, Numerous Technology</Copyright>
     <IsPackable>true</IsPackable>
     <RepositoryUrl>https://github.com/NumerousTechnology/MdView</RepositoryUrl>
