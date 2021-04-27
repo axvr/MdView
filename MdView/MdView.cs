@@ -752,7 +752,7 @@ namespace MdView
 
                 default:
                     Debug.WriteLine($"Can't render {inline.GetType()} inlines.");
-                    return null;
+                    return new Span[0];
             }
         }
 
