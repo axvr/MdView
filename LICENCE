@@ -9,14 +9,13 @@ The author is unaware of any patent claims which may affect the use,
 modification or distribution of this software.
 
 If any further clarification is required, please open an issue at:
-<https://github.com/NumerousTechnology/MdView/issues/new>
+<https://github.com/axvr/MdView/issues/new>
 
 
 Source code  [MIT]
 ------------------
 
-    Copyright (c) 2021 Numerous Technology
-    Copyright (c) 2020 Alex Vear
+    Copyright (c) 2020–2021 Alex Vear
     Copyright (c) 2017 Aloïs Deniel
 
 The MdView library and source code is available under the terms of the Expat
@@ -70,8 +69,7 @@ More info on the CC BY-SA 4.0: <https://creativecommons.org/licenses/by-sa/4.0/>
 
 MIT License
 
-Copyright (c) 2021 Numerous Technology
-Copyright (c) 2020 Alex Vear
+Copyright (c) 2020–2021 Alex Vear
 Copyright (c) 2017 Aloïs Deniel
 
 Permission is hereby granted, free of charge, to any person obtaining a copy

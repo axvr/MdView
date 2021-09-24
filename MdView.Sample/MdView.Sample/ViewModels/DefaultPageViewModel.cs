@@ -38,7 +38,7 @@ namespace MdView.Sample.ViewModels
 
 ![](mdview_logo_small_3?mdview_margin=0,-60,0,-30&mdview_height_request=200 ""MdView logo"")
 
-[MdView](https://github.com/NumerousTechnology/MdView ""MdView GitHub repository"") is a highly customisable framework for rendering Markdown as native _Xamarin.Forms_ components.
+[MdView](https://github.com/axvr/MdView ""MdView GitHub repository"") is a highly customisable framework for rendering Markdown as native _Xamarin.Forms_ components.
 
 MdView's default controls are designed to be easily replaced with your own custom ones, to better match the design of your app and add additional functionality.
 

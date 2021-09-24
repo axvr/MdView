@@ -1,17 +1,15 @@
 # MdView for Xamarin.Forms
 
-### The flexible Markdown control for Xamarin.Forms.
-
 MdView is a highly customisable Markdown control for Xamarin.Forms.  With MdView you can render Markdown such that it perfectly matches the design and behaviour of your app.
 
 | Xamarin Theme | Custom Dark Theme |
 |---|---|
-| <img src="https://raw.githubusercontent.com/NumerousTechnology/MdView/fea2f790808a16189080bacfeb4909985cd558a1/MdView_Sample_Default.png" width="270"/> | <img src="https://github.com/NumerousTechnology/MdView/raw/fea2f790808a16189080bacfeb4909985cd558a1/MdView_Sample_Dark.gif" width="270"/> |
+| <img src="https://raw.githubusercontent.com/axvr/MdView/fea2f790808a16189080bacfeb4909985cd558a1/MdView_Sample_Default.png" width="270"/> | <img src="https://github.com/axvr/MdView/raw/fea2f790808a16189080bacfeb4909985cd558a1/MdView_Sample_Dark.gif" width="270"/> |
 
 
 ## Usage
 
-*Note: MdView is currently in beta so backwards incompatible changes may happen.  Backwards incompatible changes will be mentioned in the [release notes](https://github.com/NumerousTechnology/MdView/releases).*
+*Note: MdView is currently in beta so backwards incompatible changes may happen.  Backwards incompatible changes will be mentioned in the [release notes](https://github.com/axvr/MdView/releases).*
 
 
 ### Getting started
@@ -35,8 +33,7 @@ _WIP._
 
 ## Legal
 
-- Copyright © 2021, [Numerous Technology](https://numerous.app).
-- Copyright © 2020, [Alex Vear](https://alexvear.com).
+- Copyright © 2020–2021, [Alex Vear](https://www.alexvear.com).
 - Copyright © 2017, [Aloïs Deniel](https://aloisdeniel.github.io).
 
 The MdView library and source code is available under the terms of the [_Expat_
@@ -51,4 +48,4 @@ MdView is a fork of [MarkdownView](https://github.com/dotnet-ad/MarkdownView).
 [CC0]: https://creativecommons.org/publicdomain/zero/1.0/
 [CC]:  https://creativecommons.org/licenses/by-sa/4.0/
 [MIT]: https://directory.fsf.org/wiki/License:MIT
-[Licence]: https://github.com/NumerousTechnology/MdView/blob/master/LICENCE
+[Licence]: https://github.com/axvr/MdView/blob/master/LICENCE

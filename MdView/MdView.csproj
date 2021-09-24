@@ -6,20 +6,19 @@
 
   <PropertyGroup>
     <Version>0.7.0</Version>
-    <Authors>Numerous Technology;Alex Vear</Authors>
+    <Authors>Alex Vear</Authors>
     <PackageId>MdView</PackageId>
     <PackageIcon>icon.png</PackageIcon>
-    <PackageIconUrl>https://raw.githubusercontent.com/NumerousTechnology/MdView/assets/mdview-logo-250x250.png</PackageIconUrl>
+    <PackageIconUrl>https://raw.githubusercontent.com/axvr/MdView/assets/mdview-logo-250x250.png</PackageIconUrl>
     <Title>MdView for Xamarin.Forms</Title>
-    <Summary>The flexible Markdown control for Xamarin.Forms.</Summary>
+    <Summary>A highly customisable Markdown control for Xamarin.Forms.</Summary>
     <Description>MdView is a highly customisable Markdown control for Xamarin.Forms.  With MdView you can render Markdown such that it perfectly matches the design and behaviour of your app.</Description>
-    <Copyright>Copyright © 2021, Numerous Technology</Copyright>
+    <Copyright>Copyright © 2020–2021 Alex Vear</Copyright>
     <IsPackable>true</IsPackable>
-    <RepositoryUrl>https://github.com/NumerousTechnology/MdView</RepositoryUrl>
+    <RepositoryUrl>https://github.com/axvr/MdView</RepositoryUrl>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageTags>Xamarin;iOS;Android;md;Markdown</PackageTags>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
-    <Company>Numerous Technology</Company>
   </PropertyGroup>
 
   <ItemGroup>
