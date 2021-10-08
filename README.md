@@ -29,7 +29,33 @@ Install the [MdView package from NuGet.org](https://www.nuget.org/packages/MdVie
 
 ### Customise
 
-_WIP._
+MdView is entirely based around [data templates](https://docs.microsoft.com/en-us/xamarin/xamarin-forms/app-fundamentals/templates/data-templates/).  Each Markdown element (e.g. paragraphs, images) has a corresponding data template which that MdView will use to render the Markdown.
+
+Replacing and configuring a template is easy.
+
+```xaml
+<ContentPage ...
+             xmlns:md="clr-namespace:MdView;assembly=MdView"
+             xmlns:mdt="clr-namespace:MdView.Templates;assembly=MdView"
+             ...>
+    <ScrollView>
+        <md:MdView Markdown="# Heading 1">
+            <!--
+                Replace the default "Heading1Template" with a "MdView.Templates.Heading1"
+                template configured with centred text.
+            -->
+            <md:MdView.Heading1Template>
+                <mdt:Heading1 HorizontalTextAlignment="Center" />
+            </md:MdView.Heading1Template>
+        </md:MdView>
+    </ScrollView>
+</ContentPage>
+```
+
+The templates provided with MdView are highly customisable, however you may want to create your own custom ones to better integrate into your application or add new features.  The best way to see how to create custom templates is to view/copy the source code of the [default templates](https://github.com/axvr/MdView/tree/master/MdView/Templates) and the [example templates](https://github.com/axvr/MdView/tree/master/MdView.Sample/MdView.Sample/Controls) in the sample project provided.
+
+**Note** that you may want to create a custom "Markdown" control that sets default styles to use across your application.  An example of this can be seen in the [sample project](https://github.com/axvr/MdView/blob/master/MdView.Sample/MdView.Sample/Controls/MdView.xaml).
+
 
 ## Legal
 
