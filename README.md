@@ -1,5 +1,7 @@
 # MdView for Xamarin.Forms
 
+***UNMAINTAINED.  MdView is stable and shouldn't require much (if any) maintenance.  If you would like to maintain it please [contact me](https://www.alexvear.com/contact).***
+
 MdView is a highly customisable Markdown control for Xamarin.Forms.  With MdView you can render Markdown such that it perfectly matches the design and behaviour of your app.
 
 | Xamarin Theme | Custom Dark Theme |
